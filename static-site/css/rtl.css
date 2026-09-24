@@ -1,0 +1,49 @@
+/* Cambridge Learn — RTL overrides. Loaded only on ar/ and he/ pages, after main.css. */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .site-header .container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .brand {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .main-nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .main-nav__list {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .lang-switcher__list {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .lang-switcher__list a {
+  text-align: right;
+}
+
+[dir="rtl"] .filter-group__options {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .filter-group__options label {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+@media (max-width: 820px) {
+  [dir="rtl"] .main-nav {
+    left: auto;
+    right: 0;
+  }
+}
