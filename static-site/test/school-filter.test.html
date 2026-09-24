@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>school-filter.js test harness</title>
+</head>
+<body>
+<h1>school-filter.js test harness</h1>
+<p>Open this file directly in a browser. Results print below and to the console.</p>
+<pre id="results"></pre>
+
+<script src="../js/school-filter.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var results = [];
+  function assert(name, condition) {
+    results.push((condition ? "PASS" : "FAIL") + " — " + name);
+  }
+
+  function makeCard(location, type, features) {
+    var el = document.createElement("div");
+    el.className = "school-card";
+    el.setAttribute("data-location", location);
+    el.setAttribute("data-type", type);
+    el.setAttribute("data-features", features);
+    return el;
+  }
+
+  function emptySets() {
+    return { location: new Set(), type: new Set(), features: new Set() };
+  }
+
+  var matchesFilters = window.CambridgeLearnFilter.matchesFilters;
+
+  // No filters active: everything matches.
+  var card1 = makeCard("london", "summer-school", "Homestay, Excursions");
+  assert("no active filters matches any card", matchesFilters(card1, emptySets()));
+
+  // Location filter.
+  var activeLondon = emptySets();
+  activeLondon.location.add("london");
+  assert("location filter matches same location", matchesFilters(card1, activeLondon));
+
+  var activeOxford = emptySets();
+  activeOxford.location.add("oxford");
+  assert("location filter excludes different location", !matchesFilters(card1, activeOxford));
+
+  // Type filter.
+  var activeType = emptySets();
+  activeType.type.add("summer-school");
+  assert("type filter matches same type", matchesFilters(card1, activeType));
+
+  var activeWrongType = emptySets();
+  activeWrongType.type.add("language-course");
+  assert("type filter excludes different type", !matchesFilters(card1, activeWrongType));
+
+  // Features filter (OR within facet).
+  var activeFeature = emptySets();
+  activeFeature.features.add("Excursions");
+  assert("features filter matches a card with that feature", matchesFilters(card1, activeFeature));
+
+  var activeMissingFeature = emptySets();
+  activeMissingFeature.features.add("Exam Prep");
+  assert("features filter excludes a card without that feature", !matchesFilters(card1, activeMissingFeature));
+
+  // Combined filters (AND across facets).
+  var combinedMatch = emptySets();
+  combinedMatch.location.add("london");
+  combinedMatch.type.add("summer-school");
+  assert("combined matching filters match", matchesFilters(card1, combinedMatch));
+
+  var combinedMismatch = emptySets();
+  combinedMismatch.location.add("london");
+  combinedMismatch.type.add("language-course");
+  assert("combined filters require every facet to match", !matchesFilters(card1, combinedMismatch));
+
+  var out = results.join("\n");
+  document.getElementById("results").textContent = out;
+  console.log(out);
+  var failed = results.filter(function (r) { return r.indexOf("FAIL") === 0; });
+  if (failed.length) {
+    console.error(failed.length + " test(s) failed");
+  } else {
+    console.log("All " + results.length + " tests passed");
+  }
+})();
+</script>
+</body>
+</html>
