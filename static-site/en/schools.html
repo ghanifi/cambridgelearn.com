@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Schools | Cambridge Learn</title>
-<meta name="description" content="Browse Cambridge Learn's partner language and summer schools in London, Oxford, Cambridge and beyond, and filter by location, type and features.">
+<meta name="description" content="Browse Cambridge Learn's partner language and summer schools in London, Cambridge, Canterbury and beyond, and filter by location, type and features.">
 <link rel="canonical" href="https://www.cambridgelearn.com/en/schools.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cambridge Learn">
 <meta property="og:title" content="Our Schools | Cambridge Learn">
-<meta property="og:description" content="Browse Cambridge Learn's partner language and summer schools in London, Oxford, Cambridge and beyond, and filter by location, type and features.">
+<meta property="og:description" content="Browse Cambridge Learn's partner language and summer schools in London, Cambridge, Canterbury and beyond, and filter by location, type and features.">
 <meta property="og:image" content="https://www.cambridgelearn.com/assets/photos/london-street-fallback.jpg">
 <meta property="og:url" content="https://www.cambridgelearn.com/en/schools.html">
 <meta name="twitter:card" content="summary_large_image">
@@ -42,8 +42,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/main.css">
-<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
-<link rel="apple-touch-icon" href="../assets/logo.svg">
+<link rel="icon" type="image/png" href="../assets/crest-lion.png">
+<link rel="apple-touch-icon" href="../assets/crest-lion.png">
 <meta name="theme-color" content="#0f2a4a">
 
 <script type="application/ld+json">
@@ -74,7 +74,7 @@
 <header class="site-header" data-nav-open="false">
   <div class="container">
     <a class="brand" href="index.html">
-      <img class="brand__logo" src="../assets/logo.svg" alt="Cambridge Learn crest">
+      <img class="brand__logo" src="../assets/crest-lion.png" alt="Cambridge Learn crest">
       <span class="brand__name">Cambridge Learn</span>
     </a>
 
@@ -126,8 +126,20 @@
     <div class="container">
       <div class="section__intro reveal">
         <p class="eyebrow">Explore</p>
-        <h1 id="schools-heading">Our Schools</h1>
-        <p>Filter by location, course type and features to find the right fit. School details below are sample placeholders and will be replaced with our confirmed partner schools.</p>
+        <h1 id="schools-heading">Our Partner Schools</h1>
+        <p>Every school below is a confirmed Cambridge Learn partner, accredited for the teaching of English in the UK. Filter by location, programme type and features to find the right fit — exact dates and pricing are confirmed with you directly, since they depend on the year and group size.</p>
+      </div>
+
+      <div class="included-strip reveal" aria-label="Included in every programme">
+        <p class="included-strip__label">Every programme includes</p>
+        <ul class="included-strip__list">
+          <li>Airport pickup &amp; drop-off</li>
+          <li>Full-board accommodation</li>
+          <li>Weekly excursions &amp; activities</li>
+          <li>Transport &amp; entrance tickets for excursions</li>
+          <li>1 group leader per 10 students</li>
+          <li>End-of-course certificate</li>
+        </ul>
       </div>
 
       <form data-school-filter-form aria-label="Filter schools" class="reveal">
@@ -136,9 +148,11 @@
             <legend>Location</legend>
             <div class="filter-group__options">
               <label><input type="checkbox" data-filter-group="location" value="london"> London</label>
-              <label><input type="checkbox" data-filter-group="location" value="oxford"> Oxford</label>
               <label><input type="checkbox" data-filter-group="location" value="cambridge"> Cambridge</label>
-              <label><input type="checkbox" data-filter-group="location" value="brighton"> Brighton</label>
+              <label><input type="checkbox" data-filter-group="location" value="canterbury"> Canterbury</label>
+              <label><input type="checkbox" data-filter-group="location" value="bournemouth"> Bournemouth</label>
+              <label><input type="checkbox" data-filter-group="location" value="oakham"> Oakham</label>
+              <label><input type="checkbox" data-filter-group="location" value="northampton"> Northampton</label>
             </div>
           </fieldset>
 
@@ -146,18 +160,20 @@
             <legend>Type</legend>
             <div class="filter-group__options">
               <label><input type="checkbox" data-filter-group="type" value="summer-school"> Summer School</label>
-              <label><input type="checkbox" data-filter-group="type" value="language-course"> Language Course</label>
+              <label><input type="checkbox" data-filter-group="type" value="football-english"> Football + English</label>
             </div>
           </fieldset>
 
           <fieldset class="filter-group">
             <legend>Features</legend>
             <div class="filter-group__options">
-              <label><input type="checkbox" data-filter-group="features" value="Homestay"> Homestay</label>
-              <label><input type="checkbox" data-filter-group="features" value="Excursions"> Excursions</label>
-              <label><input type="checkbox" data-filter-group="features" value="Exam Prep"> Exam Prep</label>
-              <label><input type="checkbox" data-filter-group="features" value="Small Classes"> Small Classes</label>
-              <label><input type="checkbox" data-filter-group="features" value="Sports"> Sports</label>
+              <label><input type="checkbox" data-filter-group="features" value="Indoor Pool"> Indoor Pool</label>
+              <label><input type="checkbox" data-filter-group="features" value="Central London"> Central London</label>
+              <label><input type="checkbox" data-filter-group="features" value="Punting & City Tours"> Punting &amp; City Tours</label>
+              <label><input type="checkbox" data-filter-group="features" value="Homestay Option"> Homestay Option</label>
+              <label><input type="checkbox" data-filter-group="features" value="Sports Facilities"> Sports Facilities</label>
+              <label><input type="checkbox" data-filter-group="features" value="Countryside Campus"> Countryside Campus</label>
+              <label><input type="checkbox" data-filter-group="features" value="Football Coaching"> Football Coaching</label>
             </div>
           </fieldset>
         </div>
@@ -166,44 +182,125 @@
       <h2 class="visually-hidden">Available schools</h2>
 
       <div class="card-grid reveal" data-school-grid>
-        <article class="school-card card" data-location="london" data-type="summer-school" data-features="Homestay, Excursions">
-          <h3>Sample School — London Summer</h3>
-          <p class="school-card__meta">London · Summer School</p>
-          <p>Homestay, Excursions</p>
+        <article class="school-card card" data-location="bournemouth" data-type="summer-school" data-features="Indoor Pool">
+          <h3>Bournemouth Collegiate School</h3>
+          <p class="school-card__meta">Bournemouth · Ages 8–17 · Residential</p>
+          <p>A five-minute walk from Bournemouth's beaches, with its own indoor swimming pool and seven miles of golden coastline on the doorstep.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15 hrs / week</dd></div>
+            <div><dt>Excursions</dt><dd>1 full-day + 2 half-day / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Sample excursions:</strong> London, Oxford, Bath · Winchester, Stonehenge, Salisbury</p>
         </article>
 
-        <article class="school-card card" data-location="oxford" data-type="language-course" data-features="Exam Prep, Small Classes">
-          <h3>Sample School — Oxford Academy</h3>
-          <p class="school-card__meta">Oxford · Language Course</p>
-          <p>Exam Prep, Small Classes</p>
+        <article class="school-card card" data-location="cambridge" data-type="summer-school" data-features="Punting & City Tours">
+          <h3>CATS Cambridge</h3>
+          <p class="school-card__meta">Cambridge · Ages 12–17 · Residential Ensuite</p>
+          <p>Steps from the renowned colleges of King's and Trinity, with punting and city tours built into the programme.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15 hrs / week</dd></div>
+            <div><dt>Excursions</dt><dd>1 full-day + 1 half-day / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Sample excursions:</strong> London, Bury St Edmunds, Stamford · optional Oxford, Windsor Castle</p>
         </article>
 
-        <article class="school-card card" data-location="cambridge" data-type="summer-school" data-features="Sports, Homestay">
-          <h3>Sample School — Cambridge Summer</h3>
-          <p class="school-card__meta">Cambridge · Summer School</p>
-          <p>Sports, Homestay</p>
+        <article class="school-card card" data-location="canterbury" data-type="summer-school" data-features="Homestay Option">
+          <h3>Stafford House Canterbury</h3>
+          <p class="school-card__meta">Canterbury · Ages 11–18 · Residential or Homestay</p>
+          <p>A historic cathedral city within easy reach of London — residential and homestay accommodation both available, including an intensive English option.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15–23 hrs / week</dd></div>
+            <div><dt>Excursions</dt><dd>1 full-day + local visits / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Sample excursions:</strong> Brighton, Cambridge · Leeds Castle, Dover Castle, Chatham</p>
         </article>
 
-        <article class="school-card card" data-location="cambridge" data-type="language-course" data-features="Exam Prep">
-          <h3>Sample School — Cambridge Language Centre</h3>
-          <p class="school-card__meta">Cambridge · Language Course</p>
-          <p>Exam Prep</p>
+        <article class="school-card card" data-location="london" data-type="summer-school" data-features="Central London">
+          <h3>Guildhouse School London</h3>
+          <p class="school-card__meta">London (Bloomsbury) · Ages 12–18 · Residential Ensuite</p>
+          <p>A Georgian townhouse school in the heart of Bloomsbury, central London, with travel cards included for the whole stay.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15 hrs / week</dd></div>
+            <div><dt>Excursions</dt><dd>1 full-day + 5 sightseeing visits / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Sample excursions:</strong> Cambridge, Brighton · British Museum, Science Museum, Covent Garden</p>
         </article>
 
-        <article class="school-card card" data-location="brighton" data-type="summer-school" data-features="Excursions, Sports">
-          <h3>Sample School — Brighton Coastal Summer</h3>
-          <p class="school-card__meta">Brighton · Summer School</p>
-          <p>Excursions, Sports</p>
+        <article class="school-card card" data-location="london" data-type="summer-school" data-features="Sports Facilities">
+          <h3>Brunel University, London Uxbridge</h3>
+          <p class="school-card__meta">London (Uxbridge) · Ages 11–17 · Residential Ensuite</p>
+          <p>World-class university sports facilities, fifteen minutes from Uxbridge town and within easy reach of central London.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15 hrs / week</dd></div>
+            <div><dt>Excursions</dt><dd>1 full-day + 2 half-day / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Sample excursions:</strong> London sightseeing, Cambridge · Natural History Museum, Oxford</p>
         </article>
 
-        <article class="school-card card" data-location="london" data-type="language-course" data-features="Small Classes, Homestay">
-          <h3>Sample School — London Language Institute</h3>
-          <p class="school-card__meta">London · Language Course</p>
-          <p>Small Classes, Homestay</p>
+        <article class="school-card card" data-location="northampton" data-type="summer-school" data-features="Sports Facilities">
+          <h3>Bosworth Independent School</h3>
+          <p class="school-card__meta">Northampton · Ages 8–17 · Residential</p>
+          <p>Founded in 1897 opposite open parkland, balancing city life with the surrounding English countryside.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15 hrs / week</dd></div>
+            <div><dt>Excursions</dt><dd>1 full-day + 2 half-day / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Sample excursions:</strong> Warwick Castle, Oxford · Stratford-upon-Avon, Bicester Village</p>
+        </article>
+
+        <article class="school-card card" data-location="oakham" data-type="summer-school" data-features="Countryside Campus, Sports Facilities">
+          <h3>Oakham School</h3>
+          <p class="school-card__meta">Oakham · Ages 8–17 · Residential</p>
+          <p>Founded in 1584 in a countryside market town close to Cambridge, with extensive on-site sport and leisure facilities.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15 hrs / week</dd></div>
+            <div><dt>Excursions</dt><dd>1 full-day + 2 half-day / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Sample excursions:</strong> London, Cambridge · Rutland Water, Peterborough</p>
+        </article>
+
+        <article class="school-card card" data-location="oakham" data-type="football-english" data-features="Football Coaching">
+          <h3>Michael Owen's Red Star Football School</h3>
+          <p class="school-card__meta">Oakham · Ages 9–18 · Residential</p>
+          <p>Football coaching from former professional players alongside English lessons, built around three coaching levels for every ability.</p>
+          <dl class="school-card__facts">
+            <div><dt>English lessons</dt><dd>15 hrs / week</dd></div>
+            <div><dt>Football coaching</dt><dd>15 hrs / week</dd></div>
+          </dl>
+          <p class="school-card__excursions"><strong>Includes:</strong> A London football stadium tour</p>
         </article>
       </div>
 
       <p class="filter-empty" data-filter-empty hidden>No schools match the selected filters. Try clearing one or more options.</p>
+    </div>
+  </section>
+
+  <section class="section section--cream" aria-labelledby="visa-heading">
+    <div class="container">
+      <div class="proof">
+        <div class="reveal">
+          <p class="eyebrow">Before You Apply</p>
+          <h2 id="visa-heading">UK Student Visa — What You'll Need</h2>
+          <p>Every application is reviewed individually with you, but in general two groups of documents are required:</p>
+          <ul class="proof__list">
+            <li class="proof__item">
+              <h3>Student Documents</h3>
+              <p>Passport, biometric photos, student certificate, family registration record, a UK travel itinerary, and a signed sponsor letter from a parent or guardian.</p>
+            </li>
+            <li class="proof__item">
+              <h3>Sponsor's Financial Documents</h3>
+              <p>Proof of income and bank statements from the sponsoring parent — the exact documents depend on whether they're employed, self-employed, or retired.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="card">
+            <h3>We'll send you the exact checklist</h3>
+            <p>Requirements vary by nationality and by each parent's employment status. Once you enquire, we send a personalised document checklist and check everything before it's submitted.</p>
+            <a class="button" href="index.html#contact">Ask About Your Visa Checklist</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>

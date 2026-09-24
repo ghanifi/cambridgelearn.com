@@ -53,7 +53,11 @@
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+      // A low threshold (rather than e.g. 0.16) keeps this reliable for very
+      // tall sections (long card grids) that can never fill a large share
+      // of the viewport at once — it should reveal as soon as it starts
+      // entering, not wait for a big fraction of it to be on screen.
+      { threshold: 0.01, rootMargin: "0px 0px -5% 0px" }
     );
 
     revealEls.forEach(function (el) {
