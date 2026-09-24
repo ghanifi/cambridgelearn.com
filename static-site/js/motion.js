@@ -101,7 +101,7 @@
   // exposes an edge.
   function initParallax() {
     var targets = Array.prototype.slice.call(
-      document.querySelectorAll(".hero__media, .story-break__media")
+      document.querySelectorAll(".hero__media, .story-break__media, .page-header__media")
     );
     if (!targets.length) return;
 

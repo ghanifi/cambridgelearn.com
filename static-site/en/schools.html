@@ -122,14 +122,25 @@
 </header>
 
 <main id="main-content" tabindex="-1">
-  <section class="section" aria-labelledby="schools-heading">
+  <section class="page-header" aria-labelledby="schools-heading">
+    <div class="page-header__media" aria-hidden="true">
+      <picture>
+        <source srcset="../assets/photos/canterbury.webp" type="image/webp">
+        <img src="../assets/photos/canterbury-fallback.jpg" alt="">
+      </picture>
+    </div>
+    <div class="page-header__scrim" aria-hidden="true"></div>
     <div class="container">
-      <div class="section__intro reveal">
+      <div class="page-header__content">
         <p class="eyebrow">Explore</p>
         <h1 id="schools-heading">Our Partner Schools</h1>
         <p>Every school below is a confirmed Cambridge Learn partner, accredited for the teaching of English in the UK. Filter by location, programme type and features to find the right fit — exact dates and pricing are confirmed with you directly, since they depend on the year and group size.</p>
       </div>
+    </div>
+  </section>
 
+  <section class="section" aria-label="Schools and filters">
+    <div class="container">
       <div class="included-strip reveal" aria-label="Included in every programme">
         <p class="included-strip__label">Every programme includes</p>
         <ul class="included-strip__list">
