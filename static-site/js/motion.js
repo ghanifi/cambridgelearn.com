@@ -1,7 +1,8 @@
-// Cambridge Learn — motion layer: hero kinetic title, scroll reveals, and the
-// destination cursor-follow preview (the signature interaction). Plain vanilla
-// JS, no dependencies. Every effect here is gated so the page is fully usable
-// and fully visible with this script absent, blocked, or slow to load.
+// Cambridge Learn — motion layer: hero kinetic title, scroll reveals, and a
+// scroll-driven parallax on the cinematic image sections (hero, story-break).
+// Plain vanilla JS, no dependencies. Every effect here is gated so the page
+// is fully usable and fully visible with this script absent, blocked, or
+// slow to load.
 (function () {
   "use strict";
 
@@ -65,50 +66,66 @@
     });
   }
 
-  function initDestinationPreview() {
-    var section = document.querySelector(".destinations");
-    var preview = document.getElementById("destination-preview");
-    var previewImage = document.getElementById("destination-preview-image");
-    if (!section || !preview || !previewImage) return;
+  // Scroll-driven parallax: the cinematic hero/story-break background images
+  // lag slightly behind the page scroll, giving a sense of depth. Cheap
+  // (one transform write per frame, rAF-throttled) and reversible — the
+  // CSS already sizes these layers with vertical bleed so the lag never
+  // exposes an edge.
+  function initParallax() {
+    var targets = Array.prototype.slice.call(
+      document.querySelectorAll(".hero__media, .story-break__media")
+    );
+    if (!targets.length) return;
 
-    var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (!canHover) return;
+    var ticking = false;
+    var MAX_OFFSET = 40;
+    var FACTOR = 0.15;
 
-    var links = section.querySelectorAll(".destination-item__link");
-    var previewWidth = preview.offsetWidth;
-    var previewHeight = preview.offsetHeight;
-
-    function position(event) {
-      var x = event.clientX + 28;
-      var y = event.clientY - previewHeight / 2;
-
-      var maxX = window.innerWidth - previewWidth - 16;
-      if (x > maxX) {
-        x = event.clientX - previewWidth - 28;
-      }
-      y = Math.max(16, Math.min(y, window.innerHeight - previewHeight - 16));
-
-      preview.style.transform = "translate(" + x + "px, " + y + "px)";
+    function update() {
+      targets.forEach(function (el) {
+        var sectionRect = el.parentElement.getBoundingClientRect();
+        var offset = sectionRect.top * -FACTOR;
+        offset = Math.max(-MAX_OFFSET, Math.min(MAX_OFFSET, offset));
+        el.style.transform = "translateY(" + offset.toFixed(1) + "px)";
+      });
+      ticking = false;
     }
 
-    links.forEach(function (link) {
-      link.addEventListener("mouseenter", function () {
-        var src = link.getAttribute("data-preview");
-        if (src) previewImage.src = src;
-        preview.setAttribute("data-active", "true");
-      });
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
 
-      link.addEventListener("mouseleave", function () {
-        preview.setAttribute("data-active", "false");
-      });
-    });
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+  }
 
-    section.addEventListener("mousemove", position);
+  // Lets desktop mouse-wheel users scroll the horizontal destination reel
+  // without needing a trackpad or touchscreen. Only intercepts the wheel
+  // event when the reel actually has horizontal overflow to scroll.
+  function initDestinationReel() {
+    var reel = document.querySelector(".destinations__reel");
+    if (!reel) return;
+
+    reel.addEventListener(
+      "wheel",
+      function (event) {
+        if (reel.scrollWidth <= reel.clientWidth) return;
+        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+        reel.scrollLeft += event.deltaY;
+        event.preventDefault();
+      },
+      { passive: false }
+    );
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     initKineticHeroTitle();
     initScrollReveals();
-    initDestinationPreview();
+    initParallax();
+    initDestinationReel();
   });
 })();

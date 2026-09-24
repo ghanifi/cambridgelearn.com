@@ -209,60 +209,65 @@
         <p>Our partner schools span England, from ancient college towns to the coast — each offering a different kind of summer.</p>
       </div>
 
-      <ul class="destinations__list reveal">
-        <li class="destination-item">
-          <a class="destination-item__link" href="schools.html#london" data-preview="../assets/photos/london-street.webp">
-            <span class="destination-item__thumb">
-              <picture>
-                <source srcset="../assets/photos/london-street.webp" type="image/webp">
-                <img src="../assets/photos/london-street-fallback.jpg" alt="" loading="lazy">
-              </picture>
-            </span>
-            <span class="destination-item__name">London</span>
-            <span class="destination-item__meta">Global city, world-class options</span>
-          </a>
-        </li>
-        <li class="destination-item">
-          <a class="destination-item__link" href="schools.html#canterbury" data-preview="../assets/photos/canterbury.webp">
-            <span class="destination-item__thumb">
-              <picture>
-                <source srcset="../assets/photos/canterbury.webp" type="image/webp">
-                <img src="../assets/photos/canterbury-fallback.jpg" alt="" loading="lazy">
-              </picture>
-            </span>
-            <span class="destination-item__name">Canterbury</span>
-            <span class="destination-item__meta">Historic cathedral city</span>
-          </a>
-        </li>
-        <li class="destination-item">
-          <a class="destination-item__link" href="schools.html#cambridge" data-preview="../assets/photos/cambridge.webp">
-            <span class="destination-item__thumb">
-              <picture>
-                <source srcset="../assets/photos/cambridge.webp" type="image/webp">
-                <img src="../assets/photos/cambridge-fallback.jpg" alt="" loading="lazy">
-              </picture>
-            </span>
-            <span class="destination-item__name">Cambridge</span>
-            <span class="destination-item__meta">Where the name began</span>
-          </a>
-        </li>
-        <li class="destination-item">
-          <a class="destination-item__link" href="schools.html#bournemouth" data-preview="../assets/photos/bournemouth.webp">
-            <span class="destination-item__thumb">
-              <picture>
-                <source srcset="../assets/photos/bournemouth.webp" type="image/webp">
-                <img src="../assets/photos/bournemouth-fallback.jpg" alt="" loading="lazy">
-              </picture>
-            </span>
-            <span class="destination-item__name">Bournemouth</span>
-            <span class="destination-item__meta">Coastal, creative, social</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+      <p class="destinations__hint reveal" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M15 6l6 6-6 6"/></svg>
+        Swipe to explore
+      </p>
 
-    <div class="destination-item__preview" id="destination-preview" aria-hidden="true">
-      <img id="destination-preview-image" src="../assets/photos/london-street.webp" alt="">
+      <div class="destinations__reel reveal" role="list" tabindex="0" aria-label="Destinations, scrollable">
+        <a class="destination-card" href="schools.html#london" role="listitem">
+          <span class="destination-card__media">
+            <picture>
+              <source srcset="../assets/photos/london-street.webp" type="image/webp">
+              <img src="../assets/photos/london-street-fallback.jpg" alt="" loading="lazy">
+            </picture>
+          </span>
+          <span class="destination-card__scrim" aria-hidden="true"></span>
+          <span class="destination-card__body">
+            <span class="destination-card__name">London</span>
+            <span class="destination-card__meta">Global city, world&#8209;class options</span>
+          </span>
+        </a>
+        <a class="destination-card" href="schools.html#canterbury" role="listitem">
+          <span class="destination-card__media">
+            <picture>
+              <source srcset="../assets/photos/canterbury.webp" type="image/webp">
+              <img src="../assets/photos/canterbury-fallback.jpg" alt="" loading="lazy">
+            </picture>
+          </span>
+          <span class="destination-card__scrim" aria-hidden="true"></span>
+          <span class="destination-card__body">
+            <span class="destination-card__name">Canterbury</span>
+            <span class="destination-card__meta">Historic cathedral city</span>
+          </span>
+        </a>
+        <a class="destination-card" href="schools.html#cambridge" role="listitem">
+          <span class="destination-card__media">
+            <picture>
+              <source srcset="../assets/photos/cambridge.webp" type="image/webp">
+              <img src="../assets/photos/cambridge-fallback.jpg" alt="" loading="lazy">
+            </picture>
+          </span>
+          <span class="destination-card__scrim" aria-hidden="true"></span>
+          <span class="destination-card__body">
+            <span class="destination-card__name">Cambridge</span>
+            <span class="destination-card__meta">Where the name began</span>
+          </span>
+        </a>
+        <a class="destination-card" href="schools.html#bournemouth" role="listitem">
+          <span class="destination-card__media">
+            <picture>
+              <source srcset="../assets/photos/bournemouth.webp" type="image/webp">
+              <img src="../assets/photos/bournemouth-fallback.jpg" alt="" loading="lazy">
+            </picture>
+          </span>
+          <span class="destination-card__scrim" aria-hidden="true"></span>
+          <span class="destination-card__body">
+            <span class="destination-card__name">Bournemouth</span>
+            <span class="destination-card__meta">Coastal, creative, social</span>
+          </span>
+        </a>
+      </div>
     </div>
   </section>
 
