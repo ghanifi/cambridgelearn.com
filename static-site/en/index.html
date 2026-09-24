@@ -164,13 +164,15 @@
 
 <main id="main-content" tabindex="-1">
 
-  <!-- Hero: establishes the editorial-heritage-meets-real-life language for the rest of the site -->
+  <!-- Hero: cinematic video background + kinetic title + a functional finder
+       (the hero's actual job — start a search, not just look impressive). -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__media" aria-hidden="true">
       <picture>
         <source srcset="../assets/photos/london-hero.webp" type="image/webp">
         <img src="../assets/photos/london-hero-fallback.jpg" alt="" fetchpriority="high">
       </picture>
+      <video class="hero__video" muted loop playsinline preload="none" data-hero-video></video>
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
     <div class="container">
@@ -179,8 +181,28 @@
           <span>Send</span> <span>them</span> <span>with</span> <span>confidence.</span>
         </h1>
         <p class="hero__lead">Cambridge Learn places students in accredited language and summer schools across London, Cambridge, Canterbury and beyond — guided by a team that speaks your language, in every sense.</p>
+
+        <form class="hero__finder" data-hero-finder aria-label="Find a school">
+          <p class="hero__finder-label">Start your search</p>
+          <div class="hero__finder-cities" role="group" aria-label="Choose a city">
+            <button type="button" class="hero__city-chip" data-city="" aria-pressed="true">Anywhere</button>
+            <button type="button" class="hero__city-chip" data-city="london" aria-pressed="false">London</button>
+            <button type="button" class="hero__city-chip" data-city="cambridge" aria-pressed="false">Cambridge</button>
+            <button type="button" class="hero__city-chip" data-city="canterbury" aria-pressed="false">Canterbury</button>
+            <button type="button" class="hero__city-chip" data-city="bournemouth" aria-pressed="false">Bournemouth</button>
+          </div>
+          <div class="hero__finder-row">
+            <label class="visually-hidden" for="hero-type">Programme type</label>
+            <select id="hero-type" class="hero__finder-select" data-hero-type>
+              <option value="">Any programme</option>
+              <option value="summer-school">Summer School</option>
+              <option value="football-english">Football + English</option>
+            </select>
+            <button type="submit" class="button">Find Schools</button>
+          </div>
+        </form>
+
         <div class="hero__actions">
-          <a class="button" href="schools.html">Browse Our Schools</a>
           <a class="button button--outline" href="#contact">Get in Touch</a>
         </div>
       </div>

@@ -331,7 +331,7 @@ main:focus {
 
 .hero {
   position: relative;
-  min-height: 86vh;
+  min-height: 100vh;
   display: flex;
   align-items: flex-end;
   color: var(--color-white);
@@ -348,11 +348,26 @@ main:focus {
   will-change: transform;
 }
 
-.hero__media img {
+.hero__media img,
+.hero__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 62%;
+  position: absolute;
+  inset: 0;
+}
+
+.hero__video {
+  background: var(--color-navy-deep);
+  /* Stays hidden — and gets no <source>, so no bytes are ever fetched —
+     until motion.js confirms a wide-enough viewport and adds one. Mobile
+     and reduced-motion visitors keep the still image underneath. */
+  display: none;
+}
+
+.hero__video.is-active {
+  display: block;
 }
 
 /* Ken Burns: a slow continuous zoom/pan, purely decorative motion that
@@ -415,6 +430,93 @@ main:focus {
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
+}
+
+/* ---------- Hero finder: the hero's functional core ---------- */
+
+.hero__finder {
+  margin-top: var(--space-7);
+  padding: var(--space-5);
+  background: rgba(8, 21, 39, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 640px;
+}
+
+.hero__finder-label {
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold-soft);
+  margin: 0 0 var(--space-3);
+}
+
+.hero__finder-cities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.hero__city-chip {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-editorial), border-color 0.2s var(--ease-editorial);
+}
+
+.hero__city-chip:hover {
+  border-color: var(--color-gold-soft);
+}
+
+.hero__city-chip[aria-pressed="true"] {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-navy-deep);
+  font-weight: 600;
+}
+
+.hero__finder-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.hero__finder-select {
+  flex: 1 1 200px;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  padding: 0.7rem 1rem;
+}
+
+.hero__finder-select option {
+  color: var(--color-text);
+}
+
+.hero__finder-row .button {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 560px) {
+  .hero__finder {
+    padding: var(--space-4);
+  }
+
+  .hero__finder-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .hero__scroll-cue {
@@ -1002,8 +1104,17 @@ main:focus {
 }
 
 .blog-feed__empty {
+  grid-column: 1 / -1;
   color: var(--color-text-muted);
   text-align: center;
+  padding: var(--space-7) var(--space-5);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+
+.blog-feed__empty a {
+  color: var(--color-navy);
+  font-weight: 600;
 }
 
 .site-footer {

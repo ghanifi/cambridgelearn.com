@@ -1,6 +1,8 @@
 // Cambridge Learn — homepage blog feed. Fetches latest posts from the
-// WordPress REST API and renders them. Fails quietly: if the blog isn't
-// reachable yet, the section is hidden rather than showing a broken layout.
+// WordPress REST API and renders them. If the blog isn't reachable yet
+// (e.g. the WordPress site hasn't been deployed), the section stays
+// visible with a clear "coming soon" state rather than disappearing —
+// a missing blog shouldn't look like a missing section.
 (function () {
   "use strict";
 
@@ -55,8 +57,14 @@
     });
   }
 
-  function showEmptyState(container) {
-    container.hidden = true;
+  function showEmptyState(listEl) {
+    listEl.innerHTML = "";
+    var notice = document.createElement("li");
+    notice.className = "blog-feed__empty";
+    notice.innerHTML =
+      "New guides and updates are on their way — check back soon, or " +
+      '<a href="index.html#contact">get in touch</a> with any question in the meantime.';
+    listEl.appendChild(notice);
   }
 
   function init() {
@@ -72,13 +80,13 @@
       })
       .then(function (posts) {
         if (!Array.isArray(posts) || posts.length === 0) {
-          showEmptyState(section);
+          showEmptyState(listEl);
           return;
         }
         renderPosts(posts, listEl);
       })
       .catch(function () {
-        showEmptyState(section);
+        showEmptyState(listEl);
       });
   }
 

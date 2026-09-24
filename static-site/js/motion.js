@@ -16,6 +16,34 @@
 
   document.documentElement.setAttribute("data-motion-ready", "true");
 
+  // Loads and plays the hero background video, but only for viewports wide
+  // enough that it's actually the design (mobile shows the still image
+  // instead) — the <video> has no <source> in the HTML, so nothing is
+  // fetched at all until this decides it's worth it. Already unreachable
+  // for prefers-reduced-motion visitors (see the early return above).
+  function initHeroVideo() {
+    var video = document.querySelector("[data-hero-video]");
+    if (!video) return;
+
+    var isWideEnough = window.matchMedia("(min-width: 721px)").matches;
+    if (!isWideEnough) return;
+
+    var source = document.createElement("source");
+    source.src = "../assets/video/hero-london.mp4";
+    source.type = "video/mp4";
+    video.appendChild(source);
+    video.classList.add("is-active");
+    video.load();
+
+    var playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(function () {
+        // Autoplay blocked (e.g. data-saver mode) — the still image
+        // underneath already covers this, nothing further to do.
+      });
+    }
+  }
+
   function initKineticHeroTitle() {
     var title = document.querySelector("[data-kinetic-title]");
     if (!title) return;
@@ -123,6 +151,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    initHeroVideo();
     initKineticHeroTitle();
     initScrollReveals();
     initParallax();

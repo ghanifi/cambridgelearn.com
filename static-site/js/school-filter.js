@@ -52,19 +52,54 @@
     }
   }
 
-  // Supports deep links like schools.html#london from the homepage's
-  // destination list: pre-checks the matching location filter and scrolls
-  // the grid into view so the link actually lands somewhere meaningful.
-  function applyLocationFromHash(form, cards, emptyMessageEl) {
-    var hash = window.location.hash.replace("#", "").toLowerCase();
-    if (!hash) return;
+  // Two supported deep-link hash formats:
+  //   #london                       — plain location (destination reel links)
+  //   #loc=cambridge&type=football-english — the hero finder's format
+  // Both pre-check the matching filters and scroll the grid into view so
+  // the link actually lands somewhere meaningful.
+  function parseHashParams(hash) {
+    var raw = hash.replace("#", "");
+    if (!raw) return {};
 
-    var checkbox = form.querySelector(
-      '[data-filter-group="location"][value="' + hash + '"]'
-    );
-    if (!checkbox) return;
+    if (raw.indexOf("=") === -1) {
+      return { loc: raw.toLowerCase() };
+    }
 
-    checkbox.checked = true;
+    var params = {};
+    raw.split("&").forEach(function (pair) {
+      var parts = pair.split("=");
+      if (!parts[0]) return;
+      params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || "").toLowerCase();
+    });
+    return params;
+  }
+
+  function applyFiltersFromHash(form, cards, emptyMessageEl) {
+    var params = parseHashParams(window.location.hash);
+    var matchedAnything = false;
+
+    if (params.loc) {
+      var locationCheckbox = form.querySelector(
+        '[data-filter-group="location"][value="' + params.loc + '"]'
+      );
+      if (locationCheckbox) {
+        locationCheckbox.checked = true;
+        matchedAnything = true;
+      }
+    }
+
+    if (params.type) {
+      var typeCheckbox = form.querySelector(
+        '[data-filter-group="type"][value="' + params.type + '"]'
+      );
+      if (typeCheckbox) {
+        typeCheckbox.checked = true;
+        matchedAnything = true;
+      }
+    }
+
+    if (!matchedAnything) return;
+
     applyFilters(form, cards, emptyMessageEl);
 
     var grid = document.querySelector("[data-school-grid]");
@@ -86,7 +121,7 @@
     });
 
     applyFilters(form, cards, emptyMessageEl);
-    applyLocationFromHash(form, cards, emptyMessageEl);
+    applyFiltersFromHash(form, cards, emptyMessageEl);
   }
 
   document.addEventListener("DOMContentLoaded", init);

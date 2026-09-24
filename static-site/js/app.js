@@ -55,9 +55,41 @@
     window.addEventListener("scroll", update, { passive: true });
   }
 
+  // The hero "finder": lets a visitor pick a city and a programme type
+  // right in the hero and jump straight to the matching schools, instead
+  // of the hero being purely decorative. Core functionality, so it lives
+  // here (not motion.js) and runs regardless of motion preferences.
+  function initHeroFinder() {
+    var form = document.querySelector("[data-hero-finder]");
+    if (!form) return;
+
+    var cityChips = form.querySelectorAll(".hero__city-chip");
+    var typeSelect = form.querySelector("[data-hero-type]");
+    var selectedCity = "";
+
+    cityChips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        selectedCity = chip.getAttribute("data-city") || "";
+        cityChips.forEach(function (c) {
+          c.setAttribute("aria-pressed", String(c === chip));
+        });
+      });
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var params = [];
+      if (selectedCity) params.push("loc=" + encodeURIComponent(selectedCity));
+      if (typeSelect && typeSelect.value) params.push("type=" + encodeURIComponent(typeSelect.value));
+      var hash = params.length ? "#" + params.join("&") : "";
+      window.location.href = "schools.html" + hash;
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initNavToggle();
     initLangSwitcher();
     initHeaderScrollShadow();
+    initHeroFinder();
   });
 })();
