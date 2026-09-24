@@ -380,7 +380,9 @@ main:focus {
 
 [data-motion-ready] .hero__media img,
 [data-motion-ready] .story-break__media img,
-[data-motion-ready] .page-header__media img {
+[data-motion-ready] .page-header__media img,
+[data-motion-ready] .where-panel__media img,
+[data-motion-ready] .process__media img {
   animation: ken-burns 26s ease-in-out infinite alternate;
 }
 
@@ -831,7 +833,44 @@ main:focus {
   margin: 0;
 }
 
-/* ---------- Process ---------- */
+/* ---------- Process: full-bleed cinematic background ---------- */
+
+.process {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.process__media {
+  position: absolute;
+  top: -8%;
+  bottom: -8%;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  will-change: transform;
+}
+
+.process__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.process__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 21, 39, 0.82) 0%, rgba(8, 21, 39, 0.9) 100%);
+}
+
+.process .container {
+  position: relative;
+  z-index: 1;
+}
+
+.process h2 {
+  color: var(--color-white);
+}
 
 .process__list {
   list-style: none;
@@ -845,7 +884,7 @@ main:focus {
 .process-step__index {
   font-family: var(--font-heading);
   font-size: var(--text-h2);
-  color: var(--color-gold);
+  color: var(--color-gold-soft);
   display: block;
   margin-bottom: var(--space-3);
 }
@@ -853,12 +892,12 @@ main:focus {
 .process-step__title {
   font-family: var(--font-heading);
   font-size: var(--text-h3);
-  color: var(--color-navy);
+  color: var(--color-white);
   margin-bottom: var(--space-2);
 }
 
 .process-step__text {
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
   font-size: var(--text-small);
   margin: 0;
 }
@@ -907,40 +946,82 @@ main:focus {
   margin: 0;
 }
 
-/* ---------- Where we are ---------- */
+/* ---------- Where we are: full-bleed cinematic diptych (UK / Türkiye) ---------- */
 
-.where-grid {
+.where-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-  margin-top: var(--space-7);
+  min-height: 62vh;
+  margin-top: var(--space-8);
 }
 
-.where-group h3 {
+.where-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-7) var(--space-6);
   color: var(--color-white);
-  font-size: var(--text-small);
+}
+
+.where-panel__media {
+  position: absolute;
+  top: -8%;
+  bottom: -8%;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+.where-panel__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.where-panel__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 21, 39, 0.15) 0%, rgba(8, 21, 39, 0.9) 100%);
+}
+
+.where-panel__content {
+  position: relative;
+  z-index: 1;
+}
+
+.where-panel__country {
+  font-size: var(--text-label);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-family: var(--font-body);
+  color: var(--color-gold-soft);
   font-weight: 600;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
 }
 
-.where-group__cities {
+.where-panel__cities {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
-.where-group__cities li {
+.where-panel__cities li {
   font-family: var(--font-heading);
   font-size: var(--text-h3);
   color: var(--color-white);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-border-on-dark);
+}
+
+@media (max-width: 720px) {
+  .where-split {
+    grid-template-columns: 1fr;
+  }
+
+  .where-panel {
+    min-height: 48vh;
+  }
 }
 
 /* ---------- Scroll reveal (hooked by motion.js; CSS-only fallback stays visible) ---------- */

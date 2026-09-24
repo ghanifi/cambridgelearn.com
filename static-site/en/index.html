@@ -309,8 +309,15 @@
     </div>
   </section>
 
-  <!-- Process: editorial steps, not icon cards -->
-  <section class="section" aria-labelledby="process-heading">
+  <!-- Process: editorial steps over a full-bleed cinematic background -->
+  <section class="section process" aria-labelledby="process-heading">
+    <div class="process__media" aria-hidden="true">
+      <picture>
+        <source srcset="../assets/photos/oxford.webp" type="image/webp">
+        <img src="../assets/photos/oxford-fallback.jpg" alt="">
+      </picture>
+    </div>
+    <div class="process__scrim" aria-hidden="true"></div>
     <div class="container">
       <div class="section__intro reveal">
         <p class="eyebrow">How It Works</p>
@@ -385,7 +392,8 @@
     </div>
   </section>
 
-  <!-- Where we are: dual-market structure told as a story, full detail lives in the footer -->
+  <!-- Where we are: full-bleed cinematic diptych, dual-market structure told
+       visually. Full address detail lives in the footer. -->
   <section class="section section--navy" aria-labelledby="where-heading">
     <div class="container">
       <div class="section__intro reveal">
@@ -393,18 +401,36 @@
         <h2 id="where-heading">Local on Both Sides of the Journey</h2>
         <p>Offices in the UK and Türkiye mean support in your own time zone, in your own language, throughout the process.</p>
       </div>
+    </div>
 
-      <div class="where-grid reveal">
-        <div class="where-group">
-          <h3>United Kingdom</h3>
-          <ul class="where-group__cities">
+    <div class="where-split reveal">
+      <div class="where-panel">
+        <div class="where-panel__media" aria-hidden="true">
+          <picture>
+            <source srcset="../assets/photos/bournemouth.webp" type="image/webp">
+            <img src="../assets/photos/bournemouth-fallback.jpg" alt="">
+          </picture>
+        </div>
+        <div class="where-panel__scrim" aria-hidden="true"></div>
+        <div class="where-panel__content">
+          <p class="where-panel__country">United Kingdom</p>
+          <ul class="where-panel__cities">
             <li>London</li>
             <li>London — Wimbledon</li>
           </ul>
         </div>
-        <div class="where-group">
-          <h3>Türkiye</h3>
-          <ul class="where-group__cities">
+      </div>
+      <div class="where-panel">
+        <div class="where-panel__media" aria-hidden="true">
+          <picture>
+            <source srcset="../assets/photos/antalya.webp" type="image/webp">
+            <img src="../assets/photos/antalya-fallback.jpg" alt="">
+          </picture>
+        </div>
+        <div class="where-panel__scrim" aria-hidden="true"></div>
+        <div class="where-panel__content">
+          <p class="where-panel__country">Türkiye</p>
+          <ul class="where-panel__cities">
             <li>Kemer, Antalya</li>
             <li>Muratpaşa, Antalya</li>
           </ul>
