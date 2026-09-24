@@ -5,27 +5,55 @@
 (function () {
   "use strict";
 
-  // active: { location: Set<string>, type: Set<string>, features: Set<string> }
-  // An empty Set on a facet means "no filter on this facet".
-  function matchesFilters(card, active) {
-    var location = card.getAttribute("data-location") || "";
-    var type = card.getAttribute("data-type") || "";
-    var features = (card.getAttribute("data-features") || "")
+  function splitList(value) {
+    return (value || "")
       .split(",")
       .map(function (f) { return f.trim(); })
       .filter(Boolean);
+  }
+
+  // active: { location, type, features, accommodation: Set<string>, age: Set<string> }
+  // An empty Set on a facet means "no filter on this facet". Age band values
+  // are "min-max" strings (e.g. "12-14"); a card matches a band if its own
+  // [data-age-min, data-age-max] range overlaps that band at all.
+  function matchesFilters(card, active) {
+    var location = card.getAttribute("data-location") || "";
+    var type = card.getAttribute("data-type") || "";
+    var features = splitList(card.getAttribute("data-features"));
+    var accommodation = splitList(card.getAttribute("data-accommodation"));
+    var ageMin = parseInt(card.getAttribute("data-age-min"), 10);
+    var ageMax = parseInt(card.getAttribute("data-age-max"), 10);
 
     var locationOk = active.location.size === 0 || active.location.has(location);
     var typeOk = active.type.size === 0 || active.type.has(type);
     var featuresOk =
       active.features.size === 0 ||
       features.some(function (f) { return active.features.has(f); });
+    var accommodationOk =
+      !active.accommodation ||
+      active.accommodation.size === 0 ||
+      accommodation.some(function (a) { return active.accommodation.has(a); });
+    var ageOk =
+      !active.age ||
+      active.age.size === 0 ||
+      !isFinite(ageMin) ||
+      !isFinite(ageMax) ||
+      Array.from(active.age).some(function (band) {
+        var parts = band.split("-").map(Number);
+        return ageMax >= parts[0] && ageMin <= parts[1];
+      });
 
-    return locationOk && typeOk && featuresOk;
+    return locationOk && typeOk && featuresOk && accommodationOk && ageOk;
   }
 
   function readActiveFilters(form) {
-    var active = { location: new Set(), type: new Set(), features: new Set() };
+    var active = {
+      location: new Set(),
+      type: new Set(),
+      features: new Set(),
+      accommodation: new Set(),
+      age: new Set()
+    };
     var checked = form.querySelectorAll('input[type="checkbox"]:checked');
     checked.forEach(function (input) {
       var facet = input.getAttribute("data-filter-group");

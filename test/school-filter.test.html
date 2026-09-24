@@ -19,23 +19,32 @@
     results.push((condition ? "PASS" : "FAIL") + " — " + name);
   }
 
-  function makeCard(location, type, features) {
+  function makeCard(location, type, features, accommodation, ageMin, ageMax) {
     var el = document.createElement("div");
     el.className = "school-card";
     el.setAttribute("data-location", location);
     el.setAttribute("data-type", type);
     el.setAttribute("data-features", features);
+    el.setAttribute("data-accommodation", accommodation || "");
+    if (ageMin !== undefined) el.setAttribute("data-age-min", ageMin);
+    if (ageMax !== undefined) el.setAttribute("data-age-max", ageMax);
     return el;
   }
 
   function emptySets() {
-    return { location: new Set(), type: new Set(), features: new Set() };
+    return {
+      location: new Set(),
+      type: new Set(),
+      features: new Set(),
+      accommodation: new Set(),
+      age: new Set()
+    };
   }
 
   var matchesFilters = window.CambridgeLearnFilter.matchesFilters;
 
   // No filters active: everything matches.
-  var card1 = makeCard("london", "summer-school", "Homestay, Excursions");
+  var card1 = makeCard("london", "summer-school", "Homestay, Excursions", "residential, homestay", 12, 18);
   assert("no active filters matches any card", matchesFilters(card1, emptySets()));
 
   // Location filter.
@@ -75,6 +84,29 @@
   combinedMismatch.location.add("london");
   combinedMismatch.type.add("language-course");
   assert("combined filters require every facet to match", !matchesFilters(card1, combinedMismatch));
+
+  // Accommodation filter (OR within facet, same pattern as features).
+  var activeAccommodation = emptySets();
+  activeAccommodation.accommodation.add("homestay");
+  assert("accommodation filter matches a card offering that type", matchesFilters(card1, activeAccommodation));
+
+  var activeWrongAccommodation = emptySets();
+  activeWrongAccommodation.accommodation.add("ensuite");
+  assert("accommodation filter excludes a card without that type", !matchesFilters(card1, activeWrongAccommodation));
+
+  // Age band filter (range overlap).
+  var activeAgeOverlap = emptySets();
+  activeAgeOverlap.age.add("15-18");
+  assert("age band filter matches when the card's range overlaps the band", matchesFilters(card1, activeAgeOverlap));
+
+  var activeAgeNoOverlap = emptySets();
+  activeAgeNoOverlap.age.add("8-11");
+  assert("age band filter excludes when the card's range does not overlap", !matchesFilters(card1, activeAgeNoOverlap));
+
+  var card2 = makeCard("oakham", "summer-school", "Sports Facilities", "residential", 8, 17);
+  var activeAgeYounger = emptySets();
+  activeAgeYounger.age.add("8-11");
+  assert("age band filter matches a younger-range card", matchesFilters(card2, activeAgeYounger));
 
   var out = results.join("\n");
   document.getElementById("results").textContent = out;
