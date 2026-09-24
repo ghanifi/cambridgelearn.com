@@ -133,6 +133,31 @@ p { margin: 0 0 var(--space-4); }
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 100;
+  background: var(--color-gold);
+  color: var(--color-navy-deep);
+  font-weight: 600;
+  font-size: var(--text-small);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: top 0.2s var(--ease-editorial);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* Programmatic-only focus target for the skip link; the scroll position
+   itself is the visible confirmation, so no focus ring is needed here. */
+main:focus {
+  outline: none;
+}
+
 /* ---------- Header / nav ---------- */
 
 .site-header {

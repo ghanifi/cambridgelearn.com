@@ -52,6 +52,27 @@
     }
   }
 
+  // Supports deep links like schools.html#london from the homepage's
+  // destination list: pre-checks the matching location filter and scrolls
+  // the grid into view so the link actually lands somewhere meaningful.
+  function applyLocationFromHash(form, cards, emptyMessageEl) {
+    var hash = window.location.hash.replace("#", "").toLowerCase();
+    if (!hash) return;
+
+    var checkbox = form.querySelector(
+      '[data-filter-group="location"][value="' + hash + '"]'
+    );
+    if (!checkbox) return;
+
+    checkbox.checked = true;
+    applyFilters(form, cards, emptyMessageEl);
+
+    var grid = document.querySelector("[data-school-grid]");
+    if (grid) {
+      grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
   function init() {
     var form = document.querySelector("[data-school-filter-form]");
     var grid = document.querySelector("[data-school-grid]");
@@ -65,6 +86,7 @@
     });
 
     applyFilters(form, cards, emptyMessageEl);
+    applyLocationFromHash(form, cards, emptyMessageEl);
   }
 
   document.addEventListener("DOMContentLoaded", init);

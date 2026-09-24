@@ -7,6 +7,14 @@
 <meta name="description" content="Browse Cambridge Learn's partner language and summer schools in London, Oxford, Cambridge and beyond, and filter by location, type and features.">
 <link rel="canonical" href="https://www.cambridgelearn.com/en/schools.html">
 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cambridge Learn">
+<meta property="og:title" content="Our Schools | Cambridge Learn">
+<meta property="og:description" content="Browse Cambridge Learn's partner language and summer schools in London, Oxford, Cambridge and beyond, and filter by location, type and features.">
+<meta property="og:image" content="https://www.cambridgelearn.com/assets/photos/london-street-fallback.jpg">
+<meta property="og:url" content="https://www.cambridgelearn.com/en/schools.html">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/schools.html">
 <link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/schools.html">
 <link rel="alternate" hreflang="it" href="https://www.cambridgelearn.com/it/schools.html">
@@ -34,8 +42,34 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/main.css">
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="apple-touch-icon" href="../assets/logo.svg">
+<meta name="theme-color" content="#0f2a4a">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.cambridgelearn.com/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Schools",
+      "item": "https://www.cambridgelearn.com/en/schools.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header class="site-header" data-nav-open="false">
   <div class="container">
@@ -87,15 +121,16 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
   <section class="section" aria-labelledby="schools-heading">
     <div class="container">
-      <div class="section__intro">
+      <div class="section__intro reveal">
+        <p class="eyebrow">Explore</p>
         <h1 id="schools-heading">Our Schools</h1>
         <p>Filter by location, course type and features to find the right fit. School details below are sample placeholders and will be replaced with our confirmed partner schools.</p>
       </div>
 
-      <form data-school-filter-form aria-label="Filter schools">
+      <form data-school-filter-form aria-label="Filter schools" class="reveal">
         <div class="filter-bar">
           <fieldset class="filter-group">
             <legend>Location</legend>
@@ -128,7 +163,9 @@
         </div>
       </form>
 
-      <div class="card-grid" data-school-grid>
+      <h2 class="visually-hidden">Available schools</h2>
+
+      <div class="card-grid reveal" data-school-grid>
         <article class="school-card card" data-location="london" data-type="summer-school" data-features="Homestay, Excursions">
           <h3>Sample School — London Summer</h3>
           <p class="school-card__meta">London · Summer School</p>
@@ -173,6 +210,7 @@
 
 <footer class="site-footer">
   <div class="container">
+    <h2 class="visually-hidden">Contact information</h2>
     <div class="footer-grid">
       <div class="footer-location">
         <h3>London</h3>
@@ -215,5 +253,6 @@
 
 <script src="../js/app.js"></script>
 <script src="../js/school-filter.js"></script>
+<script src="../js/motion.js"></script>
 </body>
 </html>

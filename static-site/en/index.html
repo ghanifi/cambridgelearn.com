@@ -44,6 +44,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/main.css">
 <link rel="preload" as="image" href="../assets/photos/london-hero.webp" fetchpriority="high">
+<link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+<link rel="apple-touch-icon" href="../assets/logo.svg">
+<meta name="theme-color" content="#0f2a4a">
 
 <script type="application/ld+json">
 {
@@ -107,6 +110,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <header class="site-header" data-nav-open="false" id="site-header">
   <div class="container">
     <a class="brand" href="index.html">
@@ -157,7 +162,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1">
 
   <!-- Hero: establishes the editorial-heritage-meets-real-life language for the rest of the site -->
   <section class="hero" aria-labelledby="hero-title">
@@ -394,6 +399,7 @@
 
 <footer class="site-footer">
   <div class="container">
+    <h2 class="visually-hidden">Contact information</h2>
     <div class="footer-grid">
       <div class="footer-location">
         <h3>London</h3>
