@@ -112,6 +112,36 @@
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/>
+  </symbol>
+  <symbol id="icon-age" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/>
+  </symbol>
+  <symbol id="icon-stay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/>
+  </symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+  </symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+  </symbol>
+  <symbol id="icon-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/>
+  </symbol>
+  <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.5A9 9 0 1 1 11.5 3 7 7 0 0 0 21 12.5Z"/>
+  </symbol>
+  <symbol id="icon-ball" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="m12 8 3 2-1 4h-4l-1-4 3-2Z"/><path d="M12 3v2M4.5 7.5 6 8.5M19.5 7.5 18 8.5M6 16l-2 4M18 16l2 4"/>
+  </symbol>
+  <symbol id="icon-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>
+  </symbol>
+</svg>
+
 <header class="site-header" data-nav-open="false" id="site-header">
   <div class="container">
     <a class="brand" href="index.html">
@@ -227,8 +257,8 @@
     <div class="container">
       <div class="section__intro reveal">
         <p class="eyebrow">Explore</p>
-        <h2 id="destinations-heading">Four Cities. Four Different Journeys.</h2>
-        <p>Our partner schools span England, from ancient college towns to the coast — each offering a different kind of summer.</p>
+        <h2 id="destinations-heading">Six Towns. Six Different Journeys.</h2>
+        <p>Our partner schools span England, from ancient college towns to the coast and the countryside — each offering a different kind of summer.</p>
       </div>
 
       <p class="destinations__hint reveal" aria-hidden="true">
@@ -289,7 +319,172 @@
             <span class="destination-card__meta">Coastal, creative, social</span>
           </span>
         </a>
+        <a class="destination-card" href="schools.html#oakham" role="listitem">
+          <span class="destination-card__media">
+            <picture>
+              <source srcset="../assets/photos/oakham.webp" type="image/webp">
+              <img src="../assets/photos/oakham-fallback.jpg" alt="" loading="lazy">
+            </picture>
+          </span>
+          <span class="destination-card__scrim" aria-hidden="true"></span>
+          <span class="destination-card__body">
+            <span class="destination-card__name">Oakham</span>
+            <span class="destination-card__meta">Countryside market town</span>
+          </span>
+        </a>
+        <a class="destination-card" href="schools.html#northampton" role="listitem">
+          <span class="destination-card__media">
+            <picture>
+              <source srcset="../assets/photos/northampton.webp" type="image/webp">
+              <img src="../assets/photos/northampton-fallback.jpg" alt="" loading="lazy">
+            </picture>
+          </span>
+          <span class="destination-card__scrim" aria-hidden="true"></span>
+          <span class="destination-card__body">
+            <span class="destination-card__name">Northampton</span>
+            <span class="destination-card__meta">City life, open countryside</span>
+          </span>
+        </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Featured schools: a closer look at a few real partner campuses, same
+       visual language (photo, badges, weekly stats) as the full listing on
+       schools.html — reusing that page's .school-card component. -->
+  <section class="section" aria-labelledby="featured-schools-heading">
+    <div class="container">
+      <div class="section__intro reveal">
+        <p class="eyebrow">A Closer Look</p>
+        <h2 id="featured-schools-heading">Real Schools, Real Detail</h2>
+        <p>Every partner school has its own accreditation, accommodation and weekly programme — here's a first look at four of them.</p>
+      </div>
+
+      <div class="card-grid reveal">
+        <article class="school-card card" data-age-min="8" data-age-max="17">
+          <div class="school-card__media">
+            <picture>
+              <source srcset="../assets/photos/bournemouth.webp" type="image/webp">
+              <img src="../assets/photos/bournemouth-fallback.jpg" alt="Bournemouth's coastline, five minutes from Bournemouth Collegiate School" loading="lazy">
+            </picture>
+          </div>
+          <div class="school-card__body">
+            <h3>Bournemouth Collegiate School</h3>
+            <ul class="school-card__badges" aria-label="Quick facts">
+              <li class="badge"><svg><use href="#icon-pin"></use></svg>Bournemouth</li>
+              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 8–17</li>
+              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential or Ensuite</li>
+            </ul>
+            <p>A five-minute walk from Bournemouth's beaches, with its own indoor swimming pool and seven miles of golden coastline on the doorstep.</p>
+            <div class="school-card__stats" aria-label="What's included per week">
+              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">full-day excursion</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">2</span><span class="stat__label">half-day excursions</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">7</span><span class="stat__label">evening activities</span></div>
+            </div>
+            <div class="school-card__actions">
+              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/bournemouth-collegiate-school.pdf" data-brochure-name="Bournemouth Collegiate School — Prospectus">
+                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
+                Download Brochure (PDF)
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="school-card card" data-age-min="12" data-age-max="18">
+          <div class="school-card__media">
+            <picture>
+              <source srcset="../assets/photos/cambridge.webp" type="image/webp">
+              <img src="../assets/photos/cambridge-fallback.jpg" alt="Punting on the River Cam beside Cambridge's historic colleges" loading="lazy">
+            </picture>
+          </div>
+          <div class="school-card__body">
+            <h3>CATS Cambridge</h3>
+            <ul class="school-card__badges" aria-label="Quick facts">
+              <li class="badge"><svg><use href="#icon-pin"></use></svg>Cambridge</li>
+              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 12–18</li>
+              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential Ensuite</li>
+            </ul>
+            <p>Steps from the renowned colleges of King's and Trinity, with punting and city walking tours built into the programme.</p>
+            <div class="school-card__stats" aria-label="What's included per week">
+              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">full-day excursion</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">1</span><span class="stat__label">half-day excursion</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">7</span><span class="stat__label">evening activities</span></div>
+            </div>
+            <div class="school-card__actions">
+              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/cats-cambridge.pdf" data-brochure-name="CATS Cambridge — Prospectus">
+                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
+                Download Brochure (PDF)
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="school-card card" data-age-min="12" data-age-max="18">
+          <div class="school-card__media">
+            <picture>
+              <source srcset="../assets/photos/london-street.webp" type="image/webp">
+              <img src="../assets/photos/london-street-fallback.jpg" alt="A central London street near the Guildhouse School in Bloomsbury" loading="lazy">
+            </picture>
+          </div>
+          <div class="school-card__body">
+            <h3>Guildhouse School London</h3>
+            <ul class="school-card__badges" aria-label="Quick facts">
+              <li class="badge"><svg><use href="#icon-pin"></use></svg>London (Bloomsbury)</li>
+              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 12–18</li>
+              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential Ensuite</li>
+            </ul>
+            <p>A Georgian townhouse school in the heart of Bloomsbury, central London, with travel cards included for the whole stay.</p>
+            <div class="school-card__stats" aria-label="What's included per week">
+              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">full-day excursion</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">5</span><span class="stat__label">sightseeing visits</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">3</span><span class="stat__label">evening activities</span></div>
+            </div>
+            <div class="school-card__actions">
+              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/guildhouse-school-london.pdf" data-brochure-name="Guildhouse School, London — Prospectus">
+                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
+                Download Brochure (PDF)
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="school-card card" data-age-min="8" data-age-max="18">
+          <div class="school-card__media">
+            <picture>
+              <source srcset="../assets/photos/redstar.webp" type="image/webp">
+              <img src="../assets/photos/redstar-fallback.jpg" alt="A floodlit football pitch at dusk" loading="lazy">
+            </picture>
+          </div>
+          <div class="school-card__body">
+            <h3>Michael Owen's Red Star Football School</h3>
+            <ul class="school-card__badges" aria-label="Quick facts">
+              <li class="badge"><svg><use href="#icon-pin"></use></svg>Oakham</li>
+              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 8–18</li>
+              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential</li>
+            </ul>
+            <p>Football coaching written by former England international Michael Owen and overseen by ex-Liverpool captain Mark Wright, alongside English lessons.</p>
+            <div class="school-card__stats" aria-label="What's included per week">
+              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-ball"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs football coaching</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">stadium tour</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">7</span><span class="stat__label">evening activities</span></div>
+            </div>
+            <div class="school-card__actions">
+              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/red-star-football-school.pdf" data-brochure-name="Michael Owen's Red Star Football School — Brochure">
+                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
+                Download Brochure (PDF)
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="section__cta reveal" style="text-align:center; margin-top: var(--space-7);">
+        <a class="button" href="schools.html">View All 8 Schools</a>
+      </p>
     </div>
   </section>
 
@@ -450,6 +645,20 @@
   </section>
 </main>
 
+<dialog class="brochure-modal" data-brochure-modal aria-labelledby="brochure-modal-title">
+  <div class="brochure-modal__header">
+    <h2 class="brochure-modal__title" id="brochure-modal-title" data-brochure-title>School brochure</h2>
+    <button type="button" class="brochure-modal__close" data-brochure-close aria-label="Close brochure preview">&times;</button>
+  </div>
+  <div class="brochure-modal__body">
+    <iframe class="brochure-modal__frame" data-brochure-frame title="Brochure preview" src="about:blank"></iframe>
+  </div>
+  <div class="brochure-modal__footer">
+    <a class="button button--ghost button--small" data-brochure-download href="#" download>Download PDF</a>
+    <button type="button" class="button button--small" data-brochure-close>Close</button>
+  </div>
+</dialog>
+
 <footer class="site-footer">
   <div class="container">
     <h2 class="visually-hidden">Contact information</h2>
@@ -495,6 +704,7 @@
 
 <script src="../js/app.js"></script>
 <script src="../js/blog-feed.js"></script>
+<script src="../js/brochure-modal.js"></script>
 <script src="../js/motion.js"></script>
 </body>
 </html>
