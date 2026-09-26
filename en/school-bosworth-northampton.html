@@ -17,6 +17,7 @@
 
 <link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-bosworth-northampton.html">
 <link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-bosworth-northampton.html">
+<link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-bosworth-northampton.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,7 +95,10 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
-      <span class="lang-switcher-label" lang="en">English</span>
+      <div class="lang-switcher" data-lang-switcher>
+        <button type="button" class="lang-switcher__toggle" aria-haspopup="true" aria-expanded="false" data-lang-toggle>EN</button>
+        <ul class="lang-switcher__list" role="menu" data-lang-list></ul>
+      </div>
     </nav>
   </div>
 </header>
@@ -294,5 +298,6 @@
 <script src="../js/contact-form.js"></script>
 
 <script src="../js/motion.js"></script>
+<script src="../js/lang-switcher.js"></script>
 </body>
 </html>

@@ -1,202 +1,600 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Only the English pages that currently exist are listed. Add entries
-     (and hreflang alternates) here as each additional language ships. -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- English and Turkish pages. Add a language to LANGS in the generator
+     script and re-run it (plus the hreflang injector) as each additional
+     language ships. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.cambridgelearn.com/en/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/schools.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/schools.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/schools.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/schools.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/schools.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/schools.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/schools.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/schools.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/about.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/about.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/about.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/contact.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/contact.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/contact.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/faq.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/faq.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/faq.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/accommodation.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/accommodation.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/accommodation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/accommodation.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/accommodation.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/accommodation.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/accommodation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/accommodation.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/general-english-summer-school.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/general-english-summer-school.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/general-english-summer-school.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/general-english-summer-school.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/general-english-summer-school.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/general-english-summer-school.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/general-english-summer-school.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/general-english-summer-school.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/intensive-english.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/intensive-english.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/intensive-english.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/intensive-english.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/intensive-english.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/intensive-english.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/intensive-english.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/intensive-english.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/football-english.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/football-english.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/football-english.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/football-english.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/football-english.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/football-english.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/football-english.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/football-english.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/academic-enrichment-courses.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/academic-enrichment-courses.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/academic-enrichment-courses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/academic-enrichment-courses.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/academic-enrichment-courses.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/academic-enrichment-courses.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/academic-enrichment-courses.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/academic-enrichment-courses.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/london.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/london.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/london.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/london.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/london.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/london.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/london.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/london.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/cambridge.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/cambridge.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/cambridge.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/cambridge.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/canterbury.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/canterbury.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/canterbury.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/canterbury.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/bournemouth.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/bournemouth.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/bournemouth.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/bournemouth.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/bournemouth.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/bournemouth.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/bournemouth.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/bournemouth.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/oakham.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/oakham.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/oakham.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/oakham.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/northampton.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/northampton.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/northampton.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/northampton.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/oxford.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/oxford.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/oxford.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/oxford.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/oxford.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/oxford.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/oxford.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/oxford.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-bournemouth-collegiate.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-bournemouth-collegiate.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-bournemouth-collegiate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-bournemouth-collegiate.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-bournemouth-collegiate.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-bournemouth-collegiate.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-bournemouth-collegiate.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-bournemouth-collegiate.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-cats-cambridge.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-cats-cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-cats-cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-cats-cambridge.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-cats-cambridge.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-cats-cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-cats-cambridge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-cats-cambridge.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-stafford-house-canterbury.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-stafford-house-canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-stafford-house-canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-stafford-house-canterbury.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-stafford-house-canterbury.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-stafford-house-canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-stafford-house-canterbury.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-stafford-house-canterbury.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-guildhouse-london.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-guildhouse-london.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-guildhouse-london.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-guildhouse-london.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-guildhouse-london.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-guildhouse-london.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-guildhouse-london.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-guildhouse-london.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-brunel-uxbridge.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-brunel-uxbridge.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-brunel-uxbridge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-brunel-uxbridge.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-brunel-uxbridge.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-brunel-uxbridge.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-brunel-uxbridge.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-brunel-uxbridge.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-bosworth-northampton.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-bosworth-northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-bosworth-northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-bosworth-northampton.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-bosworth-northampton.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-bosworth-northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-bosworth-northampton.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-bosworth-northampton.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-oakham.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-oakham.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-oakham.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-oakham.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-oakham.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-red-star-football.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-red-star-football.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-red-star-football.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-red-star-football.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-red-star-football.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-red-star-football.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-red-star-football.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-red-star-football.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/school-oxford-royale.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-oxford-royale.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-oxford-royale.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-oxford-royale.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/school-oxford-royale.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/school-oxford-royale.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/school-oxford-royale.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/school-oxford-royale.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/blog.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/blog-what-to-pack.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog-what-to-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog-what-to-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog-what-to-pack.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/blog-what-to-pack.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog-what-to-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog-what-to-pack.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog-what-to-pack.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/blog-visa-guide.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog-visa-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog-visa-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog-visa-guide.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/blog-visa-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog-visa-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog-visa-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog-visa-guide.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/blog-choosing-a-location.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog-choosing-a-location.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog-choosing-a-location.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog-choosing-a-location.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/blog-choosing-a-location.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/blog-choosing-a-location.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/blog-choosing-a-location.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/blog-choosing-a-location.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/accessibility.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/accessibility.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/accessibility.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/accessibility.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/privacy.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/privacy.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/privacy.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://www.cambridgelearn.com/en/terms.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/terms.html"/>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.cambridgelearn.com/tr/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cambridgelearn.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.cambridgelearn.com/tr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cambridgelearn.com/en/terms.html"/>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>

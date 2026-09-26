@@ -15,34 +15,6 @@
     });
   }
 
-  function initLangSwitcher() {
-    var switcher = document.querySelector(".lang-switcher");
-    if (!switcher) return;
-    var toggle = switcher.querySelector(".lang-switcher__toggle");
-    if (!toggle) return;
-
-    toggle.addEventListener("click", function (event) {
-      event.stopPropagation();
-      var isOpen = switcher.getAttribute("data-open") === "true";
-      switcher.setAttribute("data-open", String(!isOpen));
-      toggle.setAttribute("aria-expanded", String(!isOpen));
-    });
-
-    document.addEventListener("click", function (event) {
-      if (!switcher.contains(event.target)) {
-        switcher.setAttribute("data-open", "false");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        switcher.setAttribute("data-open", "false");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  }
-
   function initHeaderScrollShadow() {
     var header = document.querySelector(".site-header");
     if (!header) return;
@@ -88,7 +60,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initNavToggle();
-    initLangSwitcher();
     initHeaderScrollShadow();
     initHeroFinder();
   });
