@@ -1,34 +1,38 @@
-// Cambridge Learn — enquiry forms post directly to a Slack channel via an
-// incoming webhook. There is no server on this site, so this is a
-// client-only, no-cors POST: the webhook URL is necessarily public in this
-// file (anyone can view it, the same as any client-side API call), and a
-// no-cors request returns an opaque response, so genuine delivery failures
-// cannot be detected here — only network-level errors (offline, blocked)
-// are caught below. The success message is shown optimistically.
+// Cambridge Learn — enquiry forms post to an n8n workflow webhook, which
+// handles routing the enquiry on to Slack (and anywhere else it's
+// configured to go). Unlike a raw Slack incoming webhook, this endpoint
+// can respond normally over CORS, so — unlike an earlier version of this
+// file — real success/failure is detected here rather than assumed.
 (function () {
   "use strict";
 
-  var SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+  var WEBHOOK_URL = "https://n8n.londonos.uk/webhook/3c354327-6275-4e23-8067-01210d88de81";
 
-  function buildMessage(form) {
-    var context = form.getAttribute("data-form-context") || "General enquiry";
-    var lines = [":email: *New website enquiry — " + context + "*"];
-
+  function collectFields(form) {
+    var data = {};
     form.querySelectorAll("[data-field]").forEach(function (field) {
       var value = (field.value || "").trim();
       if (value) {
-        lines.push("*" + field.getAttribute("data-field") + ":* " + value);
+        data[field.getAttribute("data-field")] = value;
       }
     });
+    return data;
+  }
 
-    lines.push("_Submitted from " + window.location.pathname + "_");
-    return lines.join("\n");
+  function setStatus(statusEl, message, isError) {
+    if (!statusEl) return;
+    statusEl.hidden = false;
+    statusEl.textContent = message;
+    statusEl.classList.toggle("form-status--error", !!isError);
+    statusEl.setAttribute("tabindex", "-1");
+    statusEl.focus();
   }
 
   function initForm(form) {
     var statusEl = form.querySelector("[data-form-status]");
     var submitBtn = form.querySelector('button[type="submit"]');
-    var honeypot = form.querySelector('[data-form-honeypot]');
+    var honeypot = form.querySelector("[data-form-honeypot]");
+    var defaultBtnLabel = submitBtn ? submitBtn.textContent : "";
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -38,29 +42,32 @@
 
       if (!form.reportValidity()) return;
 
-      var text = buildMessage(form);
+      var payload = collectFields(form);
+      payload.context = form.getAttribute("data-form-context") || "General enquiry";
+      payload.page = window.location.pathname;
 
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = "Sending…";
       }
 
-      fetch(SLACK_WEBHOOK_URL, {
+      fetch(WEBHOOK_URL, {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({ text: text })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
       })
-        .catch(function () {
-          // Network-level failure only (e.g. offline). Opaque no-cors
-          // responses never reject the promise for HTTP-level errors.
-        })
-        .then(function () {
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Webhook responded with " + response.status);
+          }
           form.hidden = true;
-          if (statusEl) {
-            statusEl.hidden = false;
-            statusEl.setAttribute("tabindex", "-1");
-            statusEl.focus();
+          setStatus(statusEl, "Thank you — your message has been sent. We'll be in touch within one working day.", false);
+        })
+        .catch(function () {
+          setStatus(statusEl, "Sorry — we couldn't send that just now. Please try again, or email us directly at info@cambridgelearn.com.", true);
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = defaultBtnLabel;
           }
         });
     });

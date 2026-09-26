@@ -1820,6 +1820,12 @@ main:focus {
   display: none;
 }
 
+.form-status--error {
+  background: #fbeaea;
+  border-color: var(--color-oxblood);
+  color: var(--color-oxblood);
+}
+
 .form-privacy-note {
   font-size: var(--text-label);
   color: var(--color-text-muted);
