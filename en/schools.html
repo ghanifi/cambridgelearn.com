@@ -163,7 +163,10 @@
         <p class="field-hint" style="margin-top: var(--space-3);">Applies to our 8 English-course partner schools. Oxford Royale is a separate academic-enrichment provider with its own inclusions, confirmed when you enquire.</p>
       </div>
 
-      <form data-school-filter-form aria-label="Filter schools" class="reveal">
+      <div class="schools-layout">
+        <aside class="schools-sidebar">
+        <h2>Filter Schools</h2>
+        <form data-school-filter-form aria-label="Filter schools" class="reveal">
         <div class="filter-bar">
           <fieldset class="filter-group">
             <legend>Location</legend>
@@ -218,40 +221,42 @@
           </fieldset>
         </div>
       </form>
+      </aside>
 
-      <h2 class="visually-hidden">Available schools</h2>
+        <div class="schools-results">
+          <h2 class="visually-hidden">Available schools</h2>
 
-      <div class="card-grid reveal" data-school-grid>
-        <article class="school-card card" data-location="bournemouth" data-type="summer-school" data-features="Indoor Pool" data-accommodation="Residential, Ensuite" data-age-min="8" data-age-max="17">
+      <div class="card-grid card-grid--schools reveal" data-school-grid>
+        <article class="school-card card" data-location="oxford" data-type="summer-school" data-features="Punting & City Tours" data-accommodation="Residential" data-age-min="13" data-age-max="18">
           <div class="school-card__media">
             <picture>
-              <source srcset="../assets/photos/bournemouth.webp" type="image/webp">
-              <img src="../assets/photos/bournemouth-fallback.jpg" alt="Bournemouth's coastline, five minutes from Bournemouth Collegiate School" loading="lazy">
+              <source srcset="../assets/photos/oxford.webp" type="image/webp">
+              <img src="../assets/photos/oxford-fallback.jpg" alt="Collegiate architecture at the University of Oxford" loading="lazy">
             </picture>
           </div>
           <div class="school-card__body">
-            <h3><a href="school-bournemouth-collegiate.html" style="color:inherit;text-decoration:none;">Bournemouth Collegiate School</a></h3>
+            <h3><a href="school-oxford-royale.html" style="color:inherit;text-decoration:none;">Oxford Royale — University of Oxford</a></h3>
             <ul class="school-card__badges" aria-label="Quick facts">
-              <li class="badge"><svg><use href="#icon-pin"></use></svg>Bournemouth</li>
-              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 8–17</li>
-              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential or Ensuite</li>
+              <li class="badge"><svg><use href="#icon-pin"></use></svg>Oxford</li>
+              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 13–18</li>
+              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential (College)</li>
             </ul>
-            <p>A five-minute walk from Bournemouth's beaches, with its own indoor swimming pool and seven miles of golden coastline on the doorstep. Founded in 1899, the school offers standard shared-room accommodation on campus or premium single-ensuite rooms at Lyme Regis House, a short shuttle ride away.</p>
-            <div class="school-card__stats" aria-label="What's included per week">
-              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">full-day excursion</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">2</span><span class="stat__label">half-day excursions</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">7</span><span class="stat__label">evening activities</span></div>
+            <p>An academic summer school on campus at the University of Oxford — founded in 1096, the oldest university in the English-speaking world. Students stay in real Oxford college accommodation (Balliol, Queen's, Keble, St Hugh's or St Peter's) and can wander the cobbled streets, go punting on the river, or explore the Bodleian Library between classes.</p>
+            <div class="school-card__stats" aria-label="Programme at a glance">
+              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">40</span><span class="stat__label">hrs academic content</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">3</span><span class="stat__label">start dates</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">5</span><span class="stat__label">residential colleges</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">13</span><span class="stat__label">subject areas</span></div>
             </div>
-            <p class="school-card__courses"><strong>Courses:</strong> Classic Course · Classic Plus: Watersports</p>
-            <p class="school-card__excursions"><strong>Sample excursions:</strong> Full-day — London, Oxford, Bath. Half-day — Winchester, Stonehenge, Salisbury.</p>
+            <p class="school-card__courses"><strong>Courses:</strong> Architecture &amp; Design · Medicine · Engineering &amp; Technology · Economics &amp; Finance · Law &amp; Politics · Business &amp; Entrepreneurship, among others</p>
+            <p class="school-card__excursions"><strong>Duration:</strong> Typically 2, 4 or 6 weeks each summer — ask us for the confirmed dates and price for the year you're booking.</p>
             <div class="school-card__actions">
-              <a class="button button--ghost button--small" href="school-bournemouth-collegiate.html">View Full Details</a>
-              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/bournemouth-collegiate-school.pdf" data-brochure-name="Bournemouth Collegiate School — Prospectus">
+              <a class="button button--ghost button--small" href="school-oxford-royale.html">View Full Details</a>
+              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/oxford-royale-university-of-oxford.pdf" data-brochure-name="Oxford Royale, University of Oxford — Prospectus">
                 <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
                 Download Brochure (PDF)
               </button>
-              <a class="button button--small" href="contact.html?school=bournemouth-collegiate">Enquire</a>
+              <a class="button button--small" href="contact.html?school=oxford-royale">Enquire</a>
             </div>
           </div>
         </article>
@@ -286,40 +291,6 @@
                 Download Brochure (PDF)
               </button>
               <a class="button button--small" href="contact.html?school=cats-cambridge">Enquire</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="school-card card" data-location="canterbury" data-type="summer-school" data-features="Homestay Option" data-accommodation="Residential, Homestay" data-age-min="11" data-age-max="18">
-          <div class="school-card__media">
-            <picture>
-              <source srcset="../assets/photos/canterbury.webp" type="image/webp">
-              <img src="../assets/photos/canterbury-fallback.jpg" alt="Canterbury Cathedral in the historic university city of Canterbury" loading="lazy">
-            </picture>
-          </div>
-          <div class="school-card__body">
-            <h3><a href="school-stafford-house-canterbury.html" style="color:inherit;text-decoration:none;">Stafford House &amp; The Worthgate School, Canterbury</a></h3>
-            <ul class="school-card__badges" aria-label="Quick facts">
-              <li class="badge"><svg><use href="#icon-pin"></use></svg>Canterbury</li>
-              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 11–18</li>
-              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential or Homestay</li>
-            </ul>
-            <p>A historic cathedral city within easy reach of London — classes run across two campuses, Stafford House Canterbury and our partner The Worthgate School (a boarding school inspiring students for over 70 years). Residential rooms (1–4 beds, all private bathrooms) and homestay (shared rooms, minimum age 12) are both available, including an Intensive English option at 23 hours a week.</p>
-            <div class="school-card__stats" aria-label="What's included per week">
-              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">full-day excursion</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">2</span><span class="stat__label">local visits</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">7</span><span class="stat__label">evening activities</span></div>
-            </div>
-            <p class="school-card__courses"><strong>Courses:</strong> Classic Course · Classic Plus: Basketball · Intensive English · Medicine · Model United Nations</p>
-            <p class="school-card__excursions"><strong>Sample excursions:</strong> Full-day — London, Brighton, Cambridge. Half-day — Leeds Castle, Dover Castle, Chatham.</p>
-            <div class="school-card__actions">
-              <a class="button button--ghost button--small" href="school-stafford-house-canterbury.html">View Full Details</a>
-              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/worthgate-school-canterbury.pdf" data-brochure-name="The Worthgate School, Canterbury — Prospectus">
-                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
-                Download Brochure (PDF)
-              </button>
-              <a class="button button--small" href="contact.html?school=stafford-house-canterbury">Enquire</a>
             </div>
           </div>
         </article>
@@ -388,6 +359,74 @@
                 Download Brochure (PDF)
               </button>
               <a class="button button--small" href="contact.html?school=brunel-uxbridge">Enquire</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="school-card card" data-location="bournemouth" data-type="summer-school" data-features="Indoor Pool" data-accommodation="Residential, Ensuite" data-age-min="8" data-age-max="17">
+          <div class="school-card__media">
+            <picture>
+              <source srcset="../assets/photos/bournemouth.webp" type="image/webp">
+              <img src="../assets/photos/bournemouth-fallback.jpg" alt="Bournemouth's coastline, five minutes from Bournemouth Collegiate School" loading="lazy">
+            </picture>
+          </div>
+          <div class="school-card__body">
+            <h3><a href="school-bournemouth-collegiate.html" style="color:inherit;text-decoration:none;">Bournemouth Collegiate School</a></h3>
+            <ul class="school-card__badges" aria-label="Quick facts">
+              <li class="badge"><svg><use href="#icon-pin"></use></svg>Bournemouth</li>
+              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 8–17</li>
+              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential or Ensuite</li>
+            </ul>
+            <p>A five-minute walk from Bournemouth's beaches, with its own indoor swimming pool and seven miles of golden coastline on the doorstep. Founded in 1899, the school offers standard shared-room accommodation on campus or premium single-ensuite rooms at Lyme Regis House, a short shuttle ride away.</p>
+            <div class="school-card__stats" aria-label="What's included per week">
+              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">full-day excursion</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">2</span><span class="stat__label">half-day excursions</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">7</span><span class="stat__label">evening activities</span></div>
+            </div>
+            <p class="school-card__courses"><strong>Courses:</strong> Classic Course · Classic Plus: Watersports</p>
+            <p class="school-card__excursions"><strong>Sample excursions:</strong> Full-day — London, Oxford, Bath. Half-day — Winchester, Stonehenge, Salisbury.</p>
+            <div class="school-card__actions">
+              <a class="button button--ghost button--small" href="school-bournemouth-collegiate.html">View Full Details</a>
+              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/bournemouth-collegiate-school.pdf" data-brochure-name="Bournemouth Collegiate School — Prospectus">
+                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
+                Download Brochure (PDF)
+              </button>
+              <a class="button button--small" href="contact.html?school=bournemouth-collegiate">Enquire</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="school-card card" data-location="canterbury" data-type="summer-school" data-features="Homestay Option" data-accommodation="Residential, Homestay" data-age-min="11" data-age-max="18">
+          <div class="school-card__media">
+            <picture>
+              <source srcset="../assets/photos/canterbury.webp" type="image/webp">
+              <img src="../assets/photos/canterbury-fallback.jpg" alt="Canterbury Cathedral in the historic university city of Canterbury" loading="lazy">
+            </picture>
+          </div>
+          <div class="school-card__body">
+            <h3><a href="school-stafford-house-canterbury.html" style="color:inherit;text-decoration:none;">Stafford House &amp; The Worthgate School, Canterbury</a></h3>
+            <ul class="school-card__badges" aria-label="Quick facts">
+              <li class="badge"><svg><use href="#icon-pin"></use></svg>Canterbury</li>
+              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 11–18</li>
+              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential or Homestay</li>
+            </ul>
+            <p>A historic cathedral city within easy reach of London — classes run across two campuses, Stafford House Canterbury and our partner The Worthgate School (a boarding school inspiring students for over 70 years). Residential rooms (1–4 beds, all private bathrooms) and homestay (shared rooms, minimum age 12) are both available, including an Intensive English option at 23 hours a week.</p>
+            <div class="school-card__stats" aria-label="What's included per week">
+              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">15</span><span class="stat__label">hrs English</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">1</span><span class="stat__label">full-day excursion</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">2</span><span class="stat__label">local visits</span></div>
+              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">7</span><span class="stat__label">evening activities</span></div>
+            </div>
+            <p class="school-card__courses"><strong>Courses:</strong> Classic Course · Classic Plus: Basketball · Intensive English · Medicine · Model United Nations</p>
+            <p class="school-card__excursions"><strong>Sample excursions:</strong> Full-day — London, Brighton, Cambridge. Half-day — Leeds Castle, Dover Castle, Chatham.</p>
+            <div class="school-card__actions">
+              <a class="button button--ghost button--small" href="school-stafford-house-canterbury.html">View Full Details</a>
+              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/worthgate-school-canterbury.pdf" data-brochure-name="The Worthgate School, Canterbury — Prospectus">
+                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
+                Download Brochure (PDF)
+              </button>
+              <a class="button button--small" href="contact.html?school=stafford-house-canterbury">Enquire</a>
             </div>
           </div>
         </article>
@@ -489,43 +528,11 @@
             </div>
           </div>
         </article>
-
-        <article class="school-card card" data-location="oxford" data-type="summer-school" data-features="Punting & City Tours" data-accommodation="Residential" data-age-min="13" data-age-max="18">
-          <div class="school-card__media">
-            <picture>
-              <source srcset="../assets/photos/oxford.webp" type="image/webp">
-              <img src="../assets/photos/oxford-fallback.jpg" alt="Collegiate architecture at the University of Oxford" loading="lazy">
-            </picture>
-          </div>
-          <div class="school-card__body">
-            <h3><a href="school-oxford-royale.html" style="color:inherit;text-decoration:none;">Oxford Royale — University of Oxford</a></h3>
-            <ul class="school-card__badges" aria-label="Quick facts">
-              <li class="badge"><svg><use href="#icon-pin"></use></svg>Oxford</li>
-              <li class="badge"><svg><use href="#icon-age"></use></svg>Ages 13–18</li>
-              <li class="badge badge--stay"><svg><use href="#icon-stay"></use></svg>Residential (College)</li>
-            </ul>
-            <p>An academic summer school on campus at the University of Oxford — founded in 1096, the oldest university in the English-speaking world. Students stay in real Oxford college accommodation (Balliol, Queen's, Keble, St Hugh's or St Peter's) and can wander the cobbled streets, go punting on the river, or explore the Bodleian Library between classes.</p>
-            <div class="school-card__stats" aria-label="Programme at a glance">
-              <div class="stat"><svg class="stat__icon"><use href="#icon-clock"></use></svg><span class="stat__num">40</span><span class="stat__label">hrs academic content</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-sun"></use></svg><span class="stat__num">3</span><span class="stat__label">start dates</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-map"></use></svg><span class="stat__num">5</span><span class="stat__label">residential colleges</span></div>
-              <div class="stat"><svg class="stat__icon"><use href="#icon-moon"></use></svg><span class="stat__num">13</span><span class="stat__label">subject areas</span></div>
-            </div>
-            <p class="school-card__courses"><strong>Courses:</strong> Architecture &amp; Design · Medicine · Engineering &amp; Technology · Economics &amp; Finance · Law &amp; Politics · Business &amp; Entrepreneurship, among others</p>
-            <p class="school-card__excursions"><strong>Duration:</strong> Typically 2, 4 or 6 weeks each summer — ask us for the confirmed dates and price for the year you're booking.</p>
-            <div class="school-card__actions">
-              <a class="button button--ghost button--small" href="school-oxford-royale.html">View Full Details</a>
-              <button type="button" class="button button--ghost button--small" data-brochure-trigger data-brochure-url="../assets/brochures/oxford-royale-university-of-oxford.pdf" data-brochure-name="Oxford Royale, University of Oxford — Prospectus">
-                <svg style="width:16px;height:16px"><use href="#icon-doc"></use></svg>
-                Download Brochure (PDF)
-              </button>
-              <a class="button button--small" href="contact.html?school=oxford-royale">Enquire</a>
-            </div>
-          </div>
-        </article>
       </div>
 
       <p class="filter-empty" data-filter-empty hidden>No schools match the selected filters. Try clearing one or more options.</p>
+        </div>
+      </div>
     </div>
   </section>
 

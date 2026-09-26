@@ -1320,6 +1320,69 @@ main:focus {
 .school-card__actions {
   margin-top: auto;
   padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.school-card__actions .button {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---------- Schools page: sidebar filter layout ---------- */
+
+.schools-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.schools-sidebar {
+  position: sticky;
+  top: var(--space-6);
+  background: var(--color-cream);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+}
+
+.schools-sidebar h2 {
+  font-size: var(--text-h3);
+  margin-top: 0;
+  margin-bottom: var(--space-5);
+}
+
+.schools-sidebar .filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-bottom: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.card-grid--schools {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 1024px) {
+  .card-grid--schools {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .schools-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .schools-sidebar {
+    position: static;
+  }
 }
 
 /* ---------- Brochure modal ---------- */
