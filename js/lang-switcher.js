@@ -8,7 +8,12 @@
 
   var LANGS = [
     { code: "en", native: "English" },
-    { code: "tr", native: "Türkçe" }
+    { code: "tr", native: "Türkçe" },
+    { code: "it", native: "Italiano" },
+    { code: "es", native: "Español" },
+    { code: "fr", native: "Français" },
+    { code: "pt", native: "Português" },
+    { code: "de", native: "Deutsch" }
   ];
 
   var RTL_CODES = ["ar", "he"];
