@@ -13,7 +13,12 @@
     { code: "es", native: "Español" },
     { code: "fr", native: "Français" },
     { code: "pt", native: "Português" },
-    { code: "de", native: "Deutsch" }
+    { code: "de", native: "Deutsch" },
+    { code: "pl", native: "Polski" },
+    { code: "cs", native: "Čeština" },
+    { code: "ro", native: "Română" },
+    { code: "ru", native: "Русский" },
+    { code: "uk", native: "Українська" }
   ];
 
   var RTL_CODES = ["ar", "he"];
