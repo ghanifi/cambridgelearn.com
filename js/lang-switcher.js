@@ -18,7 +18,16 @@
     { code: "cs", native: "Čeština" },
     { code: "ro", native: "Română" },
     { code: "ru", native: "Русский" },
-    { code: "uk", native: "Українська" }
+    { code: "uk", native: "Українська" },
+    { code: "nl", native: "Nederlands" },
+    { code: "el", native: "Ελληνικά" },
+    { code: "ar", native: "العربية" },
+    { code: "he", native: "עברית" },
+    { code: "zh-hans", native: "简体中文" },
+    { code: "zh-hant", native: "繁體中文" },
+    { code: "ja", native: "日本語" },
+    { code: "ko", native: "한국어" },
+    { code: "th", native: "ไทย" }
   ];
 
   var RTL_CODES = ["ar", "he"];
