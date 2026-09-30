@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ro" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Accessibility Statement | Cambridge Learn</title>
-<meta name="description" content="How the Cambridge Learn website supports keyboard navigation, screen readers and reduced motion, and how to report an accessibility issue.">
-<link rel="canonical" href="https://cambridgelearn.com/en/accessibility.html">
+<title>Declarație de accesibilitate | Cambridge Learn</title>
+<meta name="description" content="Cum sprijină site-ul Cambridge Learn navigarea de la tastatură, cititoarele de ecran și reducerea animațiilor, și cum puteți raporta o problemă de accesibilitate.">
+<link rel="canonical" href="https://cambridgelearn.com/ro/accessibility.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cambridge Learn">
-<meta property="og:title" content="Accessibility Statement | Cambridge Learn">
-<meta property="og:description" content="How the Cambridge Learn website supports keyboard navigation, screen readers and reduced motion, and how to report an accessibility issue.">
+<meta property="og:title" content="Declarație de accesibilitate | Cambridge Learn">
+<meta property="og:description" content="Cum sprijină site-ul Cambridge Learn navigarea de la tastatură, cititoarele de ecran și reducerea animațiilor, și cum puteți raporta o problemă de accesibilitate.">
 <meta property="og:image" content="https://cambridgelearn.com/assets/photos/confidence-reading-fallback.jpg">
-<meta property="og:url" content="https://cambridgelearn.com/en/accessibility.html">
+<meta property="og:url" content="https://cambridgelearn.com/ro/accessibility.html">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="alternate" hreflang="x-default" href="https://cambridgelearn.com/en/accessibility.html">
@@ -51,8 +51,8 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cambridgelearn.com/en/" },
-    { "@type": "ListItem", "position": 2, "name": "Accessibility" }
+    { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://cambridgelearn.com/ro/" },
+    { "@type": "ListItem", "position": 2, "name": "Accesibilitate" }
   ]
 }
 </script>
@@ -60,7 +60,7 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content">Salt la conținutul principal</a>
 
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
   <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -95,34 +95,34 @@
 <header class="site-header" data-nav-open="false" id="site-header">
   <div class="container">
     <a class="brand" href="index.html">
-      <img class="brand__logo" src="../assets/crest-lion.png" alt="Cambridge Learn crest">
+      <img class="brand__logo" src="../assets/crest-lion.png" alt="Blazonul Cambridge Learn">
       <span class="brand__name">Cambridge Learn</span>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-      Menu
+      Meniu
     </button>
 
-    <nav class="main-nav" id="primary-navigation" aria-label="Primary">
+    <nav class="main-nav" id="primary-navigation" aria-label="Navigare principală">
       <ul class="main-nav__list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="schools.html">Our Schools</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="schools.html">Școlile noastre</a></li>
+        <li><a href="about.html">Despre noi</a></li>
+        <li><a href="faq.html">Întrebări frecvente</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
 
       <div class="lang-switcher" data-lang-switcher>
-        <button type="button" class="lang-switcher__toggle" aria-haspopup="true" aria-expanded="false" data-lang-toggle>EN</button>
+        <button type="button" class="lang-switcher__toggle" aria-haspopup="true" aria-expanded="false" data-lang-toggle>RO</button>
         <ul class="lang-switcher__list" role="menu" data-lang-list></ul>
       </div>
     </nav>
   </div>
 </header>
 
-<nav class="breadcrumbs container" aria-label="Breadcrumb">
+<nav class="breadcrumbs container" aria-label="Fir de navigare">
   <ol>
-    <li><a href="index.html">Home</a></li><li aria-current="page">Accessibility</li>
+    <li><a href="index.html">Acasă</a></li><li aria-current="page">Accesibilitate</li>
   </ol>
 </nav>
 
@@ -130,26 +130,26 @@
 
   <section class="section" aria-labelledby="a11y-heading">
     <div class="container prose">
-      <p class="eyebrow">Support</p>
-      <h1 id="a11y-heading">Accessibility Statement</h1>
-      <p>This statement describes the accessibility features built into cambridgelearn.com and how to tell us if something isn't working for you.</p>
+      <p class="eyebrow">Asistență</p>
+      <h1 id="a11y-heading">Declarație de accesibilitate</h1>
+      <p>Această declarație descrie funcțiile de accesibilitate integrate în cambridgelearn.com și cum ne puteți anunța dacă ceva nu funcționează pentru dumneavoastră.</p>
 
-      <h2>What we've built in</h2>
+      <h2>Ce am integrat</h2>
       <ul>
-        <li>A "skip to main content" link at the top of every page for keyboard and screen-reader users.</li>
-        <li>Semantic HTML headings, landmarks and lists throughout, rather than generic styled boxes.</li>
-        <li>Visible keyboard focus outlines on every link, button and form field.</li>
-        <li>Full support for <code>prefers-reduced-motion</code>: if your device is set to reduce motion, this site disables parallax, Ken Burns image movement and scroll animations automatically, all content remains fully visible without them.</li>
-        <li>Alt text on meaningful images; decorative background images are hidden from screen readers.</li>
-        <li>Forms with associated labels, and a native browser dialog for our brochure previews (which supports Escape-to-close and returns keyboard focus correctly).</li>
-        <li>A filter interface on our Schools page built from real checkboxes and fieldsets rather than custom, unlabelled controls.</li>
+        <li>Un link „salt la conținutul principal” în partea de sus a fiecărei pagini, pentru utilizatorii de tastatură și de cititoare de ecran.</li>
+        <li>Titluri, repere și liste HTML semantice pe tot site-ul, în locul unor simple casete stilizate.</li>
+        <li>Contururi vizibile ale focusului de tastatură pe fiecare link, buton și câmp de formular.</li>
+        <li>Suport complet pentru <code>prefers-reduced-motion</code>: dacă dispozitivul dumneavoastră este setat să reducă animațiile, acest site dezactivează automat efectul parallax, mișcarea imaginilor de tip Ken Burns și animațiile la derulare; tot conținutul rămâne complet vizibil fără ele.</li>
+        <li>Text alternativ pentru imaginile cu conținut relevant; imaginile de fundal decorative sunt ascunse de cititoarele de ecran.</li>
+        <li>Formulare cu etichete asociate și o fereastră de dialog nativă a browserului pentru previzualizarea broșurilor (care permite închiderea cu tasta Escape și readuce corect focusul tastaturii).</li>
+        <li>O interfață de filtrare pe pagina Școli construită din casete de bifat și grupuri de câmpuri reale, nu din controale personalizate fără etichete.</li>
       </ul>
 
-      <h2>Known limitations</h2>
-      <p>We haven't yet run a full audit against WCAG 2.2 AA with assistive technology users. Some third-party PDF brochures linked from school pages are supplied by the schools themselves and may not meet the same accessibility standard as this website.</p>
+      <h2>Limitări cunoscute</h2>
+      <p>Nu am efectuat încă un audit complet conform WCAG 2.2 AA împreună cu utilizatori de tehnologii asistive. Unele broșuri PDF ale terților, legate din paginile școlilor, sunt furnizate chiar de școli și este posibil să nu respecte același standard de accesibilitate ca acest site.</p>
 
-      <h2>Tell us about a problem</h2>
-      <p>If you use assistive technology and hit a barrier anywhere on this site, please <a href="contact.html">contact us</a> and describe the page and the problem. We'll aim to fix genuine accessibility defects as a priority.</p>
+      <h2>Semnalați-ne o problemă</h2>
+      <p>Dacă folosiți tehnologii asistive și întâmpinați un obstacol oriunde pe acest site, vă rugăm să <a href="contact.html">ne contactați</a> și să descrieți pagina și problema. Ne propunem să remediem cu prioritate deficiențele reale de accesibilitate.</p>
     </div>
   </section>
 
@@ -157,50 +157,48 @@
 
 <dialog class="brochure-modal" data-brochure-modal aria-labelledby="brochure-modal-title">
   <div class="brochure-modal__header">
-    <h2 class="brochure-modal__title" id="brochure-modal-title" data-brochure-title>School brochure</h2>
-    <button type="button" class="brochure-modal__close" data-brochure-close aria-label="Close brochure preview">&times;</button>
+    <h2 class="brochure-modal__title" id="brochure-modal-title" data-brochure-title>Broșura școlii</h2>
+    <button type="button" class="brochure-modal__close" data-brochure-close aria-label="Închide previzualizarea broșurii">&times;</button>
   </div>
   <div class="brochure-modal__body">
-    <iframe class="brochure-modal__frame" data-brochure-frame title="Brochure preview" src="about:blank"></iframe>
+    <iframe class="brochure-modal__frame" data-brochure-frame title="Previzualizare broșură" src="about:blank"></iframe>
   </div>
   <div class="brochure-modal__footer">
-    <a class="button button--ghost button--small" data-brochure-download href="#" download>Download PDF</a>
-    <button type="button" class="button button--small" data-brochure-close>Close</button>
+    <a class="button button--ghost button--small" data-brochure-download href="#" download>Descarcă PDF</a>
+    <button type="button" class="button button--small" data-brochure-close>Închide</button>
   </div>
 </dialog>
 
 <footer class="site-footer">
   <div class="container">
-    <h2 class="visually-hidden">Site footer</h2>
+    <h2 class="visually-hidden">Subsolul site-ului</h2>
     <div class="footer-top">
       <div class="footer-brand">
         <a class="footer-brand__link" href="index.html">
           <img class="footer-brand__logo" src="../assets/crest-lion.png" alt="">
           <span>Cambridge Learn</span>
         </a>
-        <p class="footer-brand__tagline">International student placement in personally vetted English language and summer schools across the UK.</p>
+        <p class="footer-brand__tagline">Plasarea elevilor internaționali în școli de limba engleză și școli de vară din Marea Britanie, verificate personal.</p>
         <p class="footer-brand__contact">
-          <a href="mailto:info@cambridgelearn.com">info@cambridgelearn.com</a><br>
-          <a href="tel:+442034112421">+44 20 3411 2421</a> (UK)<br>
-          <a href="tel:+902422120430">+90 242 212 0430</a> (T&uuml;rkiye)
+          <a href="mailto:info@cambridgelearn.com">info@cambridgelearn.com</a><br> <a href="tel:+442034112421">+44 20 3411 2421</a> (Marea Britanie)<br> <a href="tel:+902422120430">+90 242 212 0430</a> (Turcia)
         </p>
       </div>
 
-      <nav class="footer-col" aria-label="Explore">
-        <h3>Explore</h3>
+      <nav class="footer-col" aria-label="Explorează">
+        <h3>Explorează</h3>
         <ul>
-          <li><a href="schools.html">Our Schools</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="blog.html">Guides</a></li>
+          <li><a href="schools.html">Școlile noastre</a></li>
+          <li><a href="about.html">Despre noi</a></li>
+          <li><a href="faq.html">Întrebări frecvente</a></li>
+          <li><a href="blog.html">Ghiduri</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
-      <nav class="footer-col" aria-label="Locations">
-        <h3>Locations</h3>
+      <nav class="footer-col" aria-label="Locații">
+        <h3>Locații</h3>
         <ul>
-          <li><a href="london.html">London</a></li>
+          <li><a href="london.html">Londra</a></li>
           <li><a href="cambridge.html">Cambridge</a></li>
           <li><a href="canterbury.html">Canterbury</a></li>
           <li><a href="bournemouth.html">Bournemouth</a></li>
@@ -210,24 +208,22 @@
         </ul>
       </nav>
 
-      <nav class="footer-col" aria-label="Courses">
-        <h3>Courses</h3>
+      <nav class="footer-col" aria-label="Cursuri">
+        <h3>Cursuri</h3>
         <ul>
-          <li><a href="general-english-summer-school.html">General English</a></li>
-          <li><a href="intensive-english.html">Intensive English</a></li>
-          <li><a href="football-english.html">Football + English</a></li>
-          <li><a href="academic-enrichment-courses.html">Academic Enrichment</a></li>
-          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="general-english-summer-school.html">Engleză generală</a></li>
+          <li><a href="intensive-english.html">Engleză intensivă</a></li>
+          <li><a href="football-english.html">Fotbal + Engleză</a></li>
+          <li><a href="academic-enrichment-courses.html">Aprofundare academică</a></li>
+          <li><a href="accommodation.html">Cazare</a></li>
         </ul>
       </nav>
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-copyright">&copy; 2026 Cambridge Learn. All rights reserved.</p>
-      <nav class="footer-legal" aria-label="Legal">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="accessibility.html">Accessibility</a>
+      <p class="footer-copyright">&copy; 2026 Cambridge Learn. Toate drepturile rezervate.</p>
+      <nav class="footer-legal" aria-label="Informații legale">
+        <a href="privacy.html">Confidențialitate</a> <a href="terms.html">Termeni</a> <a href="accessibility.html">Accesibilitate</a>
       </nav>
     </div>
   </div>
