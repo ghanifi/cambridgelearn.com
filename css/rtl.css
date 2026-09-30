@@ -20,9 +20,11 @@
   flex-direction: row-reverse;
 }
 
+/* The header rows are reversed above, so the switcher still sits at the
+   right edge in RTL; keep the menu anchored right so it stays on screen. */
 [dir="rtl"] .lang-switcher__list {
-  right: auto;
-  left: 0;
+  right: 0;
+  left: auto;
 }
 
 [dir="rtl"] .lang-switcher__list a {

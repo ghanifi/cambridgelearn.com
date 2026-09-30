@@ -269,15 +269,25 @@ main:focus {
   color: var(--color-text);
   border-radius: var(--radius);
   box-shadow: 0 16px 40px rgba(8, 21, 39, 0.28);
-  max-height: 320px;
+  /* 21 languages: a grid shows them all at once instead of a long scroll. */
+  grid-template-columns: repeat(3, minmax(8.5rem, 1fr));
+  gap: 2px;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  max-height: 70vh;
   overflow-y: auto;
-  min-width: 190px;
   display: none;
   z-index: 20;
 }
 
 .lang-switcher[data-open="true"] .lang-switcher__list {
-  display: block;
+  display: grid;
+}
+
+@media (max-width: 560px) {
+  .lang-switcher__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .lang-switcher__list a {
@@ -290,6 +300,11 @@ main:focus {
 }
 
 .lang-switcher__list a:hover {
+  background: var(--color-cream);
+}
+
+.lang-switcher__list a[aria-current="true"] {
+  font-weight: 600;
   background: var(--color-cream);
 }
 
@@ -1870,12 +1885,16 @@ main:focus {
   color: var(--color-text-muted);
 }
 
+/* Clipped rather than pushed off-screen: a large negative offset widens the
+   page in RTL (ar/he) and causes a huge horizontal scroll. */
 .form-honeypot {
   position: absolute;
-  left: -9999px;
   width: 1px;
   height: 1px;
+  margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 .form-status {
