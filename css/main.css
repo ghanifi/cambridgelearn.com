@@ -2342,3 +2342,9 @@ main:focus {
     flex: 1 1 0;
   }
 }
+
+/* ---------- Guide + FAQ sections on location and course pages ---------- */
+.page-guide .prose,
+.page-guide .faq-list {
+  margin-inline: auto;
+}
