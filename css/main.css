@@ -2214,6 +2214,31 @@ main:focus {
   color: var(--color-text-on-dark-muted);
 }
 
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 165, 92, 0.4);
+  color: var(--color-gold-soft);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  background: var(--color-gold-soft);
+  color: var(--color-navy, #0f2a4a);
+}
+
 /* ---------- Floating WhatsApp button (every page) ---------- */
 .wa-float {
   position: fixed;
