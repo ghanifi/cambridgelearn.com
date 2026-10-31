@@ -122,7 +122,12 @@ def caption(m, channel):
     if channel == "instagram-standalone":
         return f'{m["title"]}\n\n{m["summary"]}\n\n{SEE.get(m["lang"], SEE["en"])}\n\n{tags}'
     if channel == "threads":
-        return fit(f'{m["title"]}\n\n{m["summary"]}', 500 - len(m["url"]) - 2) + "\n\n" + m["url"]
+        # Postiz checks Threads' 500 limit on a weighted length that counts
+        # non-Latin scripts (e.g. Thai) as more than one; budget in UTF-8 bytes.
+        body, n = f'{m["title"]}\n\n{m["summary"]}', 500 - len(m["url"]) - 2
+        while len(body.encode("utf-8")) > n and len(body) > 1:
+            body = fit(body, len(body) - 5)
+        return body + "\n\n" + m["url"]
     return f'{m["title"]}\n\n{m["summary"]}\n\n{m["url"]}\n\n{tags}'
 
 
