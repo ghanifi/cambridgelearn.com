@@ -34,23 +34,55 @@ HOURS_BETWEEN_LANGS = 2
 
 # Instagram links are not clickable; the caption points to the site instead.
 SEE = {
-    "en": "Read the full guide at cambridgelearn.com",
-    "es": "Lee la guía completa en cambridgelearn.com",
-    "it": "Leggi la guida completa su cambridgelearn.com",
-    "de": "Den ganzen Ratgeber lesen Sie auf cambridgelearn.com",
-    "tr": "Rehberin tamamı cambridgelearn.com'da",
-    "fr": "Lisez le guide complet sur cambridgelearn.com",
-    "pt": "Leia o guia completo em cambridgelearn.com",
+    "en": "Find out more at cambridgelearn.com",
+    "tr": "Ayrıntılar cambridgelearn.com'da",
+    "it": "Scopri di più su cambridgelearn.com",
+    "es": "Más información en cambridgelearn.com",
+    "fr": "Plus d'informations sur cambridgelearn.com",
+    "pt": "Saiba mais em cambridgelearn.com",
+    "de": "Mehr dazu auf cambridgelearn.com",
+    "cs": "Více na cambridgelearn.com",
+    "pl": "Więcej na cambridgelearn.com",
+    "ro": "Mai multe pe cambridgelearn.com",
+    "ru": "Подробнее на cambridgelearn.com",
+    "uk": "Детальніше на cambridgelearn.com",
+    "nl": "Lees meer op cambridgelearn.com",
+    "el": "Περισσότερα στο cambridgelearn.com",
+    "ar": "اقرأ المزيد على cambridgelearn.com",
+    "he": "לפרטים נוספים: cambridgelearn.com",
+    "zh-hans": "详情请访问 cambridgelearn.com",
+    "zh-hant": "詳情請見 cambridgelearn.com",
+    "ja": "詳しくは cambridgelearn.com へ",
+    "ko": "자세한 내용은 cambridgelearn.com에서 확인하세요",
+    "th": "อ่านเพิ่มเติมได้ที่ cambridgelearn.com",
 }
 TAGS = {
     "en": "#summerschool #learnenglish #studyinuk #englishcourse",
-    "es": "#cursosdeverano #aprenderingles #inglaterra #campamentodeverano",
-    "it": "#vacanzastudio #scuolaestiva #inglese #inghilterra",
-    "de": "#sprachreise #englischlernen #sommercamp #england",
     "tr": "#yazokulu #ingilizce #ingiltere #dilokulu",
+    "it": "#vacanzastudio #scuolaestiva #inglese #inghilterra",
+    "es": "#cursosdeverano #aprenderingles #inglaterra #campamentodeverano",
     "fr": "#séjourlinguistique #anglais #angleterre #écoledété",
     "pt": "#cursodeverão #inglês #inglaterra #intercâmbio",
+    "de": "#sprachreise #englischlernen #sommercamp #england",
+    "cs": "#jazykovýpobyt #angličtina #anglie #letníškola",
+    "pl": "#obózjęzykowy #angielski #anglia #szkołaletnia",
+    "ro": "#scoaladevara #engleza #anglia #taberedevara",
+    "ru": "#языковойлагерь #английскийязык #англия #летняяшкола",
+    "uk": "#мовнийтабір #англійська #англія #літняшкола",
+    "nl": "#taalreis #engels #engeland #zomerschool",
+    "el": "#θερινόσχολείο #αγγλικά #αγγλία #summerschool",
+    "ar": "#مدرسة_صيفية #تعلم_الانجليزية #بريطانيا #لندن",
+    "he": "#ביתספרקיץ #אנגלית #אנגליה #לימודיםבחול",
+    "zh-hans": "#英国夏校 #英国游学 #学英语 #夏令营",
+    "zh-hant": "#英國遊學 #英國夏令營 #學英文 #遊學",
+    "ja": "#サマースクール #イギリス留学 #短期留学 #英語",
+    "ko": "#영국어학연수 #영국캠프 #영어캠프 #여름캠프",
+    "th": "#ซัมเมอร์สคูล #เรียนภาษาอังกฤษ #อังกฤษ #ค่ายภาษา",
 }
+# Posting hour (UTC) that lands mid-morning for each language's main audience.
+HOUR_UTC = {"en": 9, "tr": 8, "it": 9, "es": 15, "fr": 9, "pt": 10, "de": 9, "cs": 8, "pl": 8, "ro": 7,
+            "ru": 7, "uk": 7, "nl": 9, "el": 7, "ar": 7, "he": 7, "zh-hans": 2, "zh-hant": 2, "ja": 1,
+            "ko": 1, "th": 3}
 
 
 def log(*a):
@@ -135,6 +167,64 @@ def schedule(pages, start=None):
     return plan
 
 
+def api_retry(method, path, body=None, **kw):
+    """api() that waits and retries while Postiz answers 429 (its public API is rate limited per hour)."""
+    import time, urllib.error
+    for attempt in range(40):
+        try:
+            return api(method, path, body, **kw)
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                raise
+            log(f"rate limited, waiting 5 min (attempt {attempt + 1})")
+            time.sleep(300)
+    raise RuntimeError("still rate limited after retries")
+
+
+def send(plan, dry_run=False, only=None):
+    """Schedule each (when, page) on every channel in one request per page. Returns the failure count."""
+    failures = 0
+    for when, m in plan:
+        date = when.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+        chans = [c for c in CHANNELS if (not only or c["type"] in only)
+                 and not (c["type"] == "instagram-standalone" and not m["square"])]
+        if dry_run:
+            for ch in chans:
+                log(f"--- {date} {ch['type']} {m['lang']}/{m['slug']}\n{caption(m, ch['type'])}\n[image: {m['image']}]")
+            continue
+        label = f"{date} {m['lang']}/{m['slug']}"
+        try:
+            media = None
+            if m["image"]:
+                r = upload_retry(m["image"])
+                media = r
+            body = {"type": "schedule", "date": date, "shortLink": False, "tags": [],
+                    "posts": [{"integration": {"id": ch["id"]},
+                               "value": [{"content": caption(m, ch["type"]), "image": [media] if media else []}],
+                               "settings": settings(ch["type"])} for ch in chans]}
+            r = api_retry("POST", "/posts", body)
+            ok = isinstance(r, list) and len([x for x in r if x.get("postId")]) == len(chans)
+            log(("ok   " if ok else "FAIL ") + f"{label} ({len(chans)} channels)" + ("" if ok else f" {r}"))
+            failures += 0 if ok else 1
+        except Exception as e:  # keep going with the next page
+            failures += 1
+            log(f"FAIL {label} {e}")
+    return failures
+
+
+def upload_retry(file):
+    import time, urllib.error
+    for attempt in range(40):
+        try:
+            return upload(file)
+        except urllib.error.HTTPError as e:
+            if e.code != 429:
+                raise
+            log(f"rate limited on upload, waiting 5 min (attempt {attempt + 1})")
+            time.sleep(300)
+    raise RuntimeError("still rate limited after retries")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="*")
@@ -161,32 +251,7 @@ def main():
         log("POSTIZ_URL / POSTIZ_API_KEY not set; skipping:", ", ".join(files))
         return
 
-    failures = 0
-    for when, m in schedule([meta(f) for f in files]):
-        date = when.strftime("%Y-%m-%dT%H:%M:%S.000Z")
-        media = None
-        for ch in CHANNELS:
-            if ch["type"] == "instagram-standalone" and not m["square"]:
-                log(f"skip instagram for {m['lang']}/{m['slug']}: no assets/social/{m['slug']}.jpg")
-                continue
-            text = caption(m, ch["type"])
-            if a.dry_run:
-                log(f"--- {date} {ch['type']} {m['lang']}/{m['slug']}\n{text}\n[image: {m['image']}]")
-                continue
-            try:
-                if media is None and m["image"]:
-                    media = upload(m["image"])
-                body = {"type": "schedule", "date": date, "shortLink": False, "tags": [],
-                        "posts": [{"integration": {"id": ch["id"]},
-                                   "value": [{"content": text, "image": [media] if media else []}],
-                                   "settings": settings(ch["type"])}]}
-                r = api("POST", "/posts", body)
-                ok = isinstance(r, list) and r and r[0].get("postId")
-                log(("ok   " if ok else "FAIL ") + f"{date} {ch['type']:<21} {m['lang']}/{m['slug']}" + ("" if ok else f" {r}"))
-                failures += 0 if ok else 1
-            except Exception as e:  # keep going with the other channels
-                failures += 1
-                log(f"FAIL {date} {ch['type']:<21} {m['lang']}/{m['slug']} {e}")
+    failures = send(schedule([meta(f) for f in files]), a.dry_run)
     sys.exit(1 if failures else 0)
 
 
