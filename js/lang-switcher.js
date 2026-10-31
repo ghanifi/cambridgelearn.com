@@ -61,10 +61,17 @@
     if (!currentEntry) currentEntry = LANGS[0];
     toggle.textContent = currentEntry.code.toUpperCase();
 
+    // A page published in only some languages lists them in
+    // <meta name="cl-available-langs" content="en,es,it">; other languages
+    // link to their guides index instead of a missing page.
+    var availMeta = document.querySelector('meta[name="cl-available-langs"]');
+    var available = availMeta ? availMeta.getAttribute("content").split(",") : null;
+
     LANGS.forEach(function (entry) {
       var li = document.createElement("li");
       var a = document.createElement("a");
-      a.href = "/" + entry.code + "/" + current.file;
+      var file = !available || available.indexOf(entry.code) !== -1 ? current.file : "blog.html";
+      a.href = "/" + entry.code + "/" + file;
       a.lang = entry.code;
       a.dir = RTL_CODES.indexOf(entry.code) !== -1 ? "rtl" : "ltr";
       a.textContent = entry.native;
