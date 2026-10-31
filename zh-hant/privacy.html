@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-938WQ95F4C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+  try { if (localStorage.getItem('cl_consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+  gtag('js', new Date());
+
+  gtag('config', 'G-938WQ95F4C');
+</script>
 <title>隱私權政策｜Cambridge Learn</title>
 <meta name="description" content="說明 Cambridge Learn 如何蒐集、使用及保護您透過本網站提供的個人資料，包括諮詢表單與兒童資料。">
 <link rel="canonical" href="https://cambridgelearn.com/zh-hant/privacy.html">
@@ -40,7 +54,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="../css/main.css">
 <link rel="icon" type="image/png" href="../assets/crest-lion.png">
 <link rel="apple-touch-icon" href="../assets/crest-lion.png">
@@ -109,7 +125,7 @@
         <li><a href="schools.html">我們的學校</a></li>
         <li><a href="about.html">關於我們</a></li>
         <li><a href="faq.html">常見問題</a></li>
-        <li><a href="contact.html">聯絡我們</a></li>
+        <li class="main-nav__cta-item"><a class="main-nav__cta" href="contact.html">聯絡我們</a></li>
       </ul>
 
       <div class="lang-switcher" data-lang-switcher>
@@ -143,7 +159,8 @@
 
       <h2>我們蒐集哪些資料</h2>
       <p>當您在本網站提交諮詢或聯絡表單時，我們會蒐集您提供的資訊：姓名、電子郵件地址、電話號碼（如有提供），以及您的留言內容，其中可能包括孩子的年齡及您有興趣的學校。</p>
-      <p>本網站目前未使用任何分析或廣告 Cookie。我們使用由 Google 伺服器提供的 Google Fonts 來顯示網站字型；因此載入頁面時，您裝置的 IP 位址會傳送至 Google。我們本身不設置任何追蹤 Cookie。</p>
+      <p>我們使用 Google 提供的 Google Analytics 4 來了解網站的使用情況，例如造訪了哪些頁面、裝置類型以及訪客的大致國家/地區。分析型 Cookie（<code>_ga</code>、<code>_ga_*</code>，最長保存 2 年）只有在您於 Cookie 提示中選擇「接受」後才會啟用。如果您拒絕，則不會啟用任何分析型 Cookie；Google 仍可能收到不含 Cookie 的基本訊號（例如頁面已載入），這些訊號不會用於識別您的身分。您可以隨時透過每個頁面底部的「Cookie 設定」連結變更選擇。我們不使用廣告型 Cookie。</p>
+      <p>我們使用由 Google 伺服器提供的 Google Fonts 來顯示網站字型，因此載入頁面時會將您裝置的 IP 位址傳送給 Google。您的 Cookie 選擇儲存在瀏覽器的本機儲存空間中，因此提示不會再次出現。</p>
 
       <h2>諮詢表單的處理方式</h2>
       <p>本網站的表單提交內容會直接傳送至內部團隊的訊息頻道，以便顧問迅速回覆。這表示您的訊息除了由我們處理外，也會經由我們的訊息服務供應商處理；這些訊息不會儲存在公開或面向客戶的資料庫中。</p>
@@ -202,8 +219,10 @@
         </a>
         <p class="footer-brand__tagline">為國際學生親自考察、精選的英國各地英語語言學校與暑期學校。</p>
         <p class="footer-brand__contact">
-          <a href="mailto:info@cambridgelearn.com">info@cambridgelearn.com</a><br>\n          <a href="tel:+442034112421">+44 20 3411 2421</a>（英國）<br>\n          <a href="tel:+902422120430">+90 242 212 0430</a>（T&uuml;rkiye）
+          <a href="mailto:info@cambridgelearn.com">info@cambridgelearn.com</a><br>\n          <a href="tel:+442034112421">+44 20 3411 2421</a>（英國）<br>\n          <a href="tel:+902422120430">+90 242 212 0430</a>（T&uuml;rkiye）<br>
+          <a class="footer-brand__whatsapp" href="https://wa.me/447384583976?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%B2%B4%E6%A9%9F%E6%A7%8B%E5%9C%A8%E8%8B%B1%E5%9C%8B%E7%9A%84%E5%A4%8F%E4%BB%A4%E7%87%9F%E8%AA%B2%E7%A8%8B%E3%80%82" target="_blank" rel="noopener">WhatsApp: +44 7384 583976</a>
         </p>
+        <p class="footer-brand__address">86-90 Paul Street, London EC2A 4NE<br>Highland House, 165 The Broadway, Wimbledon, London SW19 1NE<br>Merkez Mah. 128 Sok. No:7, Kemer / Antalya<br>Balbey Mah. İsmetpaşa Cad. No:6/C, Muratpaşa / Antalya</p>
       </div>
 
       <nav class="footer-col" aria-label="探索">
@@ -251,6 +270,8 @@
   </div>
 </footer>
 
+<a class="wa-float" href="https://wa.me/447384583976?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%B2%B4%E6%A9%9F%E6%A7%8B%E5%9C%A8%E8%8B%B1%E5%9C%8B%E7%9A%84%E5%A4%8F%E4%BB%A4%E7%87%9F%E8%AA%B2%E7%A8%8B%E3%80%82" target="_blank" rel="noopener" aria-label="透過 WhatsApp 聯絡我們" data-track="whatsapp"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.9Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+<script src="../js/consent.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/brochure-modal.js"></script>
 <script src="../js/contact-form.js"></script>

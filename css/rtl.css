@@ -49,3 +49,20 @@
     right: 0;
   }
 }
+
+[dir="rtl"] .wa-float {
+  right: auto;
+  left: calc(20px + env(safe-area-inset-left, 0px));
+}
+
+[dir="rtl"] .cookie-banner {
+  left: calc(92px + env(safe-area-inset-left, 0px));
+  right: calc(16px + env(safe-area-inset-right, 0px));
+}
+
+@media (max-width: 560px) {
+  [dir="rtl"] .cookie-banner {
+    left: calc(10px + env(safe-area-inset-left, 0px));
+    right: calc(10px + env(safe-area-inset-right, 0px));
+  }
+}

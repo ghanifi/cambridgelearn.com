@@ -58,9 +58,30 @@
     });
   }
 
+  // Contact-click tracking: WhatsApp, phone and email links report an event
+  // to Google Analytics (gtag) or GTM (dataLayer) when either is installed.
+  // Without analytics on the page this does nothing.
+  function initContactTracking() {
+    document.addEventListener("click", function (event) {
+      var link = event.target.closest && event.target.closest("a[href]");
+      if (!link) return;
+      var href = link.getAttribute("href") || "";
+      var channel = href.indexOf("wa.me/") !== -1 ? "whatsapp"
+        : href.indexOf("tel:") === 0 ? "phone"
+        : href.indexOf("mailto:") === 0 ? "email" : "";
+      if (!channel) return;
+      var detail = { method: channel, page: window.location.pathname };
+      if (typeof window.gtag === "function") window.gtag("event", "contact_click", detail);
+      if (window.dataLayer && typeof window.dataLayer.push === "function") {
+        window.dataLayer.push({ event: "contact_click", method: channel, page: detail.page });
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initNavToggle();
     initHeaderScrollShadow();
     initHeroFinder();
+    initContactTracking();
   });
 })();

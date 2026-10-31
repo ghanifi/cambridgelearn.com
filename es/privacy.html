@@ -3,6 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-938WQ95F4C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+  try { if (localStorage.getItem('cl_consent') === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' }); } catch (e) {}
+  gtag('js', new Date());
+
+  gtag('config', 'G-938WQ95F4C');
+</script>
 <title>Política de Privacidad | Cambridge Learn</title>
 <meta name="description" content="Cómo recopila, utiliza y protege Cambridge Learn los datos personales que compartes a través de este sitio web, incluidos los formularios de consulta y los datos de menores.">
 <link rel="canonical" href="https://cambridgelearn.com/es/privacy.html">
@@ -40,7 +54,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="../css/main.css">
 <link rel="icon" type="image/png" href="../assets/crest-lion.png">
 <link rel="apple-touch-icon" href="../assets/crest-lion.png">
@@ -109,7 +125,7 @@
         <li><a href="schools.html">Nuestras Escuelas</a></li>
         <li><a href="about.html">Sobre Nosotros</a></li>
         <li><a href="faq.html">Preguntas Frecuentes</a></li>
-        <li><a href="contact.html">Contacto</a></li>
+        <li class="main-nav__cta-item"><a class="main-nav__cta" href="contact.html">Contacto</a></li>
       </ul>
 
       <div class="lang-switcher" data-lang-switcher>
@@ -143,7 +159,8 @@
 
       <h2>Qué recopilamos</h2>
       <p>Cuando envías una consulta o un formulario de contacto en este sitio, recopilamos la información que proporcionas: tu nombre, dirección de correo electrónico, número de teléfono (si lo indicas) y el contenido de tu mensaje, que puede incluir la edad de tu hijo o hija y las escuelas que te interesan.</p>
-      <p>Actualmente no utilizamos cookies de analítica o publicidad en este sitio web. Utilizamos Google Fonts, servido desde los servidores de Google, para mostrar las tipografías del sitio; por ello, al cargar una página se envía la dirección IP de tu dispositivo a Google. No establecemos ninguna cookie de seguimiento propia.</p>
+      <p>Utilizamos Google Analytics 4, un servicio de Google, para entender cómo se usa el sitio: por ejemplo, qué páginas se visitan, el tipo de dispositivo y el país aproximado del visitante. Las cookies de analítica (<code>_ga</code>, <code>_ga_*</code>, conservadas hasta 2 años) solo se activan si eliges Aceptar en el aviso de cookies. Si las rechazas, no se activa ninguna cookie de analítica; Google puede seguir recibiendo señales básicas sin cookies, como que se ha cargado una página, que no se utilizan para identificarte. Puedes cambiar tu elección en cualquier momento con el enlace «Configuración de cookies» al pie de cada página. No utilizamos cookies publicitarias.</p>
+      <p>Utilizamos Google Fonts, servido desde los servidores de Google, para mostrar las tipografías del sitio; por tanto, al cargar una página se envía la dirección IP de tu dispositivo a Google. Tu elección sobre las cookies se guarda en el almacenamiento local de tu navegador para no volver a mostrar el aviso.</p>
 
       <h2>Cómo se gestionan los formularios de consulta</h2>
       <p>Los envíos de formularios en este sitio se dirigen directamente a un canal interno de mensajería del equipo para que un asesor pueda responder con rapidez. Esto significa que tu mensaje es procesado tanto por nuestro proveedor de mensajería como por nosotros; no se almacena en una base de datos pública ni de cara al cliente.</p>
@@ -204,8 +221,10 @@
         <p class="footer-brand__contact">
           <a href="mailto:info@cambridgelearn.com">info@cambridgelearn.com</a><br>
           <a href="tel:+442034112421">+44 20 3411 2421</a> (Reino Unido)<br>
-          <a href="tel:+902422120430">+90 242 212 0430</a> (T&uuml;rkiye)
+          <a href="tel:+902422120430">+90 242 212 0430</a> (T&uuml;rkiye)<br>
+          <a class="footer-brand__whatsapp" href="https://wa.me/447384583976?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20escuelas%20de%20verano%20en%20el%20Reino%20Unido." target="_blank" rel="noopener">WhatsApp: +44 7384 583976</a>
         </p>
+        <p class="footer-brand__address">86-90 Paul Street, London EC2A 4NE<br>Highland House, 165 The Broadway, Wimbledon, London SW19 1NE<br>Merkez Mah. 128 Sok. No:7, Kemer / Antalya<br>Balbey Mah. İsmetpaşa Cad. No:6/C, Muratpaşa / Antalya</p>
       </div>
 
       <nav class="footer-col" aria-label="Explorar">
@@ -255,6 +274,8 @@
   </div>
 </footer>
 
+<a class="wa-float" href="https://wa.me/447384583976?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20escuelas%20de%20verano%20en%20el%20Reino%20Unido." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-track="whatsapp"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.9Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.1.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg></a>
+<script src="../js/consent.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/brochure-modal.js"></script>
 <script src="../js/contact-form.js"></script>

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=en/">
 <link rel="canonical" href="https://cambridgelearn.com/en/">
 <title>Cambridge Learn</title>
+<script>
+  // Send visitors to their browser's language when we have it; English otherwise.
+  (function () {
+    var codes = ['en', 'tr', 'it', 'es', 'fr', 'pt', 'de', 'pl', 'cs', 'ro', 'ru', 'uk', 'nl', 'el', 'ar', 'he', 'zh-hans', 'zh-hant', 'ja', 'ko', 'th'];
+    var target = "en";
+    var prefs = navigator.languages || [navigator.language || "en"];
+    for (var i = 0; i < prefs.length; i++) {
+      var l = String(prefs[i]).toLowerCase();
+      if (l.indexOf("zh") === 0) { target = /tw|hk|mo|hant/.test(l) ? "zh-hant" : "zh-hans"; break; }
+      if (l === "iw" || l.indexOf("iw-") === 0) { target = "he"; break; }
+      var base = l.split("-")[0];
+      if (codes.indexOf(base) !== -1) { target = base; break; }
+    }
+    window.location.replace(target + "/" + window.location.search + window.location.hash);
+  })();
+</script>
+<meta http-equiv="refresh" content="0; url=en/">
 </head>
 <body>
 <p>Redirecting to <a href="en/">Cambridge Learn</a>.</p>
