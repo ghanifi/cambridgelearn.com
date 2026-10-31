@@ -140,7 +140,18 @@ def main():
     ap.add_argument("files", nargs="*")
     ap.add_argument("--since")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--check", action="store_true", help="only confirm the API key works and the channels exist")
     a = ap.parse_args()
+
+    if a.check:
+        if not (os.environ.get("POSTIZ_URL") and os.environ.get("POSTIZ_API_KEY")):
+            log("FAIL: POSTIZ_URL / POSTIZ_API_KEY not set")
+            sys.exit(1)
+        found = {i["id"]: i for i in api("GET", "/integrations")}
+        missing = [c["type"] for c in CHANNELS if c["id"] not in found or found[c["id"]].get("disabled")]
+        for c in CHANNELS:
+            log(("ok   " if c["type"] not in missing else "MISSING ") + c["type"])
+        sys.exit(1 if missing else 0)
 
     files = a.files or (guide_files_since(a.since) if a.since else [])
     if not files:

@@ -2,21 +2,27 @@ name: Share new guides on social media
 
 # When a push adds new guide pages (<lang>/blog-*.html), schedule one post
 # per language on the Postiz channels listed in .github/scripts/share_postiz.py.
+# A push that only changes this workflow or the script runs a connection
+# check instead (reads the channel list, posts nothing).
 on:
   push:
     branches: [main]
     paths:
       - "*/blog-*.html"
+      - ".github/workflows/share-new-guides.yml"
+      - ".github/scripts/share_postiz.py"
 
 jobs:
   share:
     runs-on: ubuntu-latest
+    env:
+      POSTIZ_URL: ${{ secrets.POSTIZ_URL }}
+      POSTIZ_API_KEY: ${{ secrets.POSTIZ_API_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Check Postiz connection
+        run: python3 .github/scripts/share_postiz.py --check
       - name: Schedule posts in Postiz
-        env:
-          POSTIZ_URL: ${{ secrets.POSTIZ_URL }}
-          POSTIZ_API_KEY: ${{ secrets.POSTIZ_API_KEY }}
         run: python3 .github/scripts/share_postiz.py --since "${{ github.event.before }}"
