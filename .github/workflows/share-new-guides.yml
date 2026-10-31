@@ -1,0 +1,22 @@
+name: Share new guides on social media
+
+# When a push adds new guide pages (<lang>/blog-*.html), schedule one post
+# per language on the Postiz channels listed in .github/scripts/share_postiz.py.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*/blog-*.html"
+
+jobs:
+  share:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Schedule posts in Postiz
+        env:
+          POSTIZ_URL: ${{ secrets.POSTIZ_URL }}
+          POSTIZ_API_KEY: ${{ secrets.POSTIZ_API_KEY }}
+        run: python3 .github/scripts/share_postiz.py --since "${{ github.event.before }}"
