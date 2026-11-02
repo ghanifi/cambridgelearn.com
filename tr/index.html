@@ -200,25 +200,108 @@
 
   <!-- Hero: cinematic video background + kinetic title + a functional finder
        (the hero's actual job — start a search, not just look impressive). -->
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__media" aria-hidden="true">
-      <picture>
+  <style id="cine-hero-css">
+  /* Cinematic hero — concept: "the England study journey at golden hour".
+     Layered media (Ken-Burns video/still) + filmic scrim, grain, light sweep;
+     kinetic serif headline; frosted finder. All motion gated behind
+     [data-motion-ready] so text is fully visible without JS / reduced motion. */
+  .cine-hero,.cine-hero *{box-sizing:border-box}
+  .cine-hero{position:relative;isolation:isolate;overflow:clip;min-height:clamp(600px,88vh,920px);color:#fff}
+  .cine-hero__stage{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--color-navy-deep)}
+  .cine-hero__img,.cine-hero__img img,.cine-hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .cine-hero__video{opacity:0;transition:opacity 1.2s ease;z-index:1}
+  .cine-hero__video.is-active{opacity:1}
+  [data-motion-ready] .cine-hero__img,[data-motion-ready] .cine-hero__video{animation:cineKen 28s ease-in-out infinite alternate;will-change:transform}
+  @keyframes cineKen{from{transform:scale(1.05)}to{transform:scale(1.17) translate3d(-1.5%,-2%,0)}}
+  .cine-hero__scrim{position:absolute;inset:0;z-index:2;background:
+    linear-gradient(90deg,rgba(8,20,36,.94) 0%,rgba(8,20,36,.66) 40%,rgba(8,20,36,.2) 70%,rgba(8,20,36,.5) 100%),
+    linear-gradient(0deg,rgba(8,20,36,.96) 1%,rgba(8,20,36,.28) 32%,rgba(8,20,36,.04) 58%,rgba(8,20,36,.55) 100%),
+    radial-gradient(135% 95% at 72% 12%,transparent 38%,rgba(6,16,30,.55) 100%)}
+  .cine-hero__grain{position:absolute;inset:0;z-index:3;opacity:.09;mix-blend-mode:overlay;pointer-events:none;background-size:200px 200px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .cine-hero__sweep{position:absolute;top:-10%;bottom:-10%;left:-30%;width:28%;z-index:3;pointer-events:none;transform:skewX(-12deg);opacity:0;background:linear-gradient(105deg,transparent,rgba(201,165,92,.12) 45%,rgba(250,246,238,.22) 50%,rgba(201,165,92,.12) 55%,transparent)}
+  [data-motion-ready] .cine-hero__sweep{animation:cineSweep 11s ease-in-out 1.4s infinite}
+  @keyframes cineSweep{0%{left:-30%;opacity:0}10%{opacity:1}28%{left:122%;opacity:0}100%{left:122%;opacity:0}}
+  .cine-hero__frame{position:absolute;inset:16px;z-index:3;pointer-events:none;border:1px solid rgba(201,165,92,.22)}
+  .cine-hero__inner{position:relative;z-index:4;max-width:var(--max-width,1200px);margin-inline:auto;padding-top:clamp(5rem,22vh,11rem);padding-bottom:clamp(3rem,8vh,5rem);padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+  .cine-hero__content{max-width:780px;min-width:0;display:flex;flex-direction:column;gap:clamp(.85rem,1.9vh,1.35rem)}
+  .cine-hero__title{overflow-wrap:break-word}
+  .cine-hero__eyebrow{font-family:var(--font-body);font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--color-gold-soft);font-weight:600;display:flex;align-items:center;gap:13px;margin:0}
+  .cine-hero__eyebrow::before{content:"";width:36px;height:1px;background:var(--color-gold-soft)}
+  .cine-hero__title{font-family:var(--font-heading);font-weight:700;font-size:var(--text-display);line-height:1.02;margin:0;letter-spacing:-.012em;text-shadow:0 2px 34px rgba(0,0,0,.45)}
+  .cine-hero__title .is-gold{color:var(--color-gold-soft);font-style:italic}
+  .cine-hero__title span{display:inline-block}
+  [data-motion-ready] .cine-hero__title span{opacity:0;transform:translateY(.55em) rotate(2deg);filter:blur(10px);transition:opacity .85s cubic-bezier(.2,.75,.2,1),transform .85s cubic-bezier(.2,.75,.2,1),filter .85s ease;transition-delay:var(--kinetic-delay,0s)}
+  [data-motion-ready] .cine-hero__title.is-revealed span{opacity:1;transform:none;filter:none}
+  .cine-hero__lead{font-size:var(--text-lead);line-height:1.58;color:var(--color-text-on-dark);max-width:60ch;margin:0;text-shadow:0 1px 18px rgba(0,0,0,.4)}
+  .cine-hero__trust{list-style:none;display:flex;flex-wrap:wrap;align-items:center;padding:0;margin:0;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--color-text-on-dark)}
+  .cine-hero__trust li{display:flex;align-items:center}
+  .cine-hero__trust li::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--color-gold);margin:0 15px}
+  .cine-hero__trust li:last-child::after{display:none}
+  .cine-finder{margin-top:.3rem;background:linear-gradient(180deg,rgba(10,24,42,.58),rgba(8,20,36,.74));-webkit-backdrop-filter:blur(16px) saturate(1.1);backdrop-filter:blur(16px) saturate(1.1);border:1px solid rgba(201,165,92,.28);border-radius:14px;padding:clamp(14px,2vw,20px);box-shadow:0 26px 64px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.07);max-width:640px}
+  .cine-finder__label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--color-gold-soft);font-weight:700;margin:0 0 12px}
+  .cine-finder__cities{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .cine-hero .hero__city-chip{appearance:none;-webkit-appearance:none;cursor:pointer;font:inherit;font-size:.82rem;font-weight:600;color:var(--color-text-on-dark);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 15px;transition:background .18s,border-color .18s,color .18s,transform .18s}
+  .cine-hero .hero__city-chip:hover{background:rgba(201,165,92,.16);border-color:rgba(201,165,92,.5);transform:translateY(-1px)}
+  .cine-hero .hero__city-chip[aria-pressed="true"]{background:var(--color-gold-soft);border-color:var(--color-gold-soft);color:#0a182a}
+  .cine-finder__row{display:flex;gap:10px;flex-wrap:wrap}
+  .cine-finder__select{flex:1;min-width:190px;font:inherit;font-size:.95rem;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 14px}
+  .cine-finder__select option{color:#0a182a}
+  .cine-finder__submit{font:inherit;font-weight:700;font-size:.95rem;color:#0a182a;background:var(--color-gold-soft);border:0;border-radius:10px;padding:12px 26px;cursor:pointer;transition:background .18s,transform .18s}
+  .cine-finder__submit:hover{background:var(--color-gold);transform:translateY(-1px)}
+  .cine-hero__secondary{color:#fff;font-weight:600;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;width:max-content}
+  .cine-hero__secondary .arw{transition:transform .2s}
+  .cine-hero__secondary:hover{color:var(--color-gold-soft)}
+  .cine-hero__secondary:hover .arw{transform:translateX(4px)}
+  .cine-hero :is(button,select,a):focus-visible{outline:2px solid var(--color-gold-soft);outline-offset:3px;border-radius:8px}
+  .cine-hero__cue{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:4;color:var(--color-text-on-dark-muted);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .cine-hero__cue .line{width:1px;height:36px;background:linear-gradient(var(--color-gold-soft),transparent)}
+  [data-motion-ready] .cine-hero__cue .line{transform-origin:top;animation:cineCue 1.9s ease-in-out infinite}
+  @keyframes cineCue{0%,100%{transform:scaleY(.45);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+  @media (max-width:720px){
+    .cine-hero{min-height:auto;align-items:stretch}
+    .cine-hero__title{font-size:clamp(2.1rem,8.5vw,2.7rem)}
+    .cine-hero__inner{padding-top:clamp(1.75rem,7vh,2.75rem);padding-bottom:2.5rem}
+    .cine-hero__frame{inset:10px}
+    .cine-hero__cue{display:none}
+    .cine-finder__row{flex-direction:column}
+    .cine-finder__select{min-width:0}
+    .cine-finder__submit{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cine-hero__img,.cine-hero__video,.cine-hero__sweep,.cine-hero__cue .line{animation:none!important}
+  }
+  </style>
+
+  <!-- Hero: cinematic layered media + kinetic serif title + functional finder.
+       Motion is gated behind [data-motion-ready]; without JS or with reduced
+       motion the headline and all content render fully visible and static. -->
+  <section class="cine-hero" aria-labelledby="hero-title">
+    <div class="cine-hero__stage">
+      <picture class="cine-hero__img">
         <source srcset="../assets/photos/london-hero-800.webp 800w, ../assets/photos/london-hero-1400.webp 1400w, ../assets/photos/london-hero.webp 2400w" sizes="100vw" type="image/webp">
         <img src="../assets/photos/london-hero-fallback.jpg" alt="" fetchpriority="high">
       </picture>
-      <video class="hero__video" muted loop playsinline preload="none" data-hero-video></video>
+      <video class="cine-hero__video" muted loop playsinline preload="none" data-hero-video></video>
+      <div class="cine-hero__scrim"></div>
+      <div class="cine-hero__grain"></div>
+      <div class="cine-hero__sweep"></div>
+      <div class="cine-hero__frame"></div>
     </div>
-    <div class="hero__scrim" aria-hidden="true"></div>
-    <div class="container">
-      <div class="hero__content">
-        <h1 class="hero__title" id="hero-title" data-kinetic-title>
-          <span>İngiltere'de</span> <span>Yaz</span> <span>Okulu</span> <span>ve</span> <span>Dil</span> <span>Okulu</span>
-        </h1>
-        <p class="hero__lead">9 okul, 7 şehir, tek doğru seçim. 8–18 yaş için İngiltere'de yaz okulu ve İngilizce dil okulu programlarında çocuğunuzu, yeri boş olan ilk okula değil; seviyesine ve hedeflerine gerçekten uygun olana yönlendiriyoruz. Listeye eklemeden önce her kampüsü bizzat inceliyoruz — Londra, Cambridge, Canterbury, Bournemouth, Oakham, Northampton ve Oxford'da, İngiltere ve Türkiye'deki danışmanlarımızla yanınızdayız.</p>
 
-        <form class="hero__finder" data-hero-finder aria-label="Okul bulun">
-          <p class="hero__finder-label">Aramanıza başlayın</p>
-          <div class="hero__finder-cities" role="group" aria-label="Bir şehir seçin">
+    <div class="cine-hero__inner">
+      <div class="cine-hero__content">
+        <p class="cine-hero__eyebrow">Cambridge Learn · bizzat incelenmiş okullar</p>
+        <h1 class="cine-hero__title" id="hero-title" data-kinetic-title>
+          <span>İngiltere'de</span> <span class="is-gold">Yaz</span> <span>Okulu</span> <span>ve</span> <span class="is-gold">Dil</span> <span>Okulu</span>
+        </h1>
+        <p class="cine-hero__lead">9 okul, 7 şehir, tek doğru seçim. 8–18 yaş için İngiltere'de yaz okulu ve İngilizce dil okulu programlarında çocuğunuzu, yeri boş olan ilk okula değil; seviyesine ve hedeflerine gerçekten uygun olana yönlendiriyoruz. Her kampüsü, listeye eklemeden önce bizzat inceliyoruz.</p>
+        <ul class="cine-hero__trust">
+          <li>9 okul</li><li>7 şehir</li><li>8–18 yaş</li><li>Tam pansiyon</li><li>Türkçe danışmanlık</li>
+        </ul>
+
+        <form class="cine-finder" data-hero-finder aria-label="Okul bulun">
+          <p class="cine-finder__label">Aramanıza başlayın</p>
+          <div class="cine-finder__cities" role="group" aria-label="Bir şehir seçin">
             <button type="button" class="hero__city-chip" data-city="" aria-pressed="true">Her Yer</button>
             <button type="button" class="hero__city-chip" data-city="london" aria-pressed="false">Londra</button>
             <button type="button" class="hero__city-chip" data-city="cambridge" aria-pressed="false">Cambridge</button>
@@ -228,25 +311,24 @@
             <button type="button" class="hero__city-chip" data-city="northampton" aria-pressed="false">Northampton</button>
             <button type="button" class="hero__city-chip" data-city="oxford" aria-pressed="false">Oxford</button>
           </div>
-          <div class="hero__finder-row">
+          <div class="cine-finder__row">
             <label class="visually-hidden" for="hero-type">Program türü</label>
-            <select id="hero-type" class="hero__finder-select" data-hero-type>
+            <select id="hero-type" class="cine-finder__select" data-hero-type>
               <option value="">Herhangi bir program</option>
               <option value="summer-school">Yaz Okulu</option>
               <option value="football-english">Futbol + İngilizce</option>
             </select>
-            <button type="submit" class="button">Okulları Bul</button>
+            <button type="submit" class="cine-finder__submit">Okulları Bul</button>
           </div>
         </form>
 
-        <div class="hero__actions">
-          <a class="button button--outline" href="contact.html">Bir Danışmanla Görüşün</a>
-        </div>
+        <a class="cine-hero__secondary" href="contact.html">Bir danışmanla görüşün <span class="arw" aria-hidden="true">→</span></a>
       </div>
     </div>
-    <div class="hero__scroll-cue" aria-hidden="true">
+
+    <div class="cine-hero__cue" aria-hidden="true">
       <span>Kaydırın</span>
-      <span class="hero__scroll-cue-line"></span>
+      <span class="line"></span>
     </div>
   </section>
 
